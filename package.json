@@ -1,0 +1,17 @@
+{
+  "name": "duck-library",
+  "version": "1.0.0",
+  "description": "대학생 세컨드브레인 DUCK LIBRARY를 내 Notion에 한 번에 설치하는 도구 (RAW → WIKI → OUTPUT)",
+  "type": "module",
+  "bin": { "duck-library": "src/setup.js" },
+  "scripts": {
+    "setup": "node src/setup.js",
+    "dry-run": "node src/setup.js --dry-run",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=18.17" },
+  "keywords": ["notion", "second-brain", "template", "student", "korean", "세컨드브레인", "노션"],
+  "author": "DockY",
+  "license": "MIT",
+  "dependencies": { "@notionhq/client": "5.27.0" }
+}
