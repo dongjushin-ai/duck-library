@@ -85,12 +85,22 @@ export function rowProps(dbDef, schemaProps, row, ctx) {
 
 // ---------- 설치 ----------
 
-export async function install({ token, parentId, samples = true, dryRun = false, today = new Date(), quiet = false }) {
+export async function install(opts) {
+  const progress = {};
+  try {
+    return await installSteps(opts, progress);
+  } catch (e) {
+    e.progress = progress;
+    throw e;
+  }
+}
+
+async function installSteps({ token, parentId, samples = true, dryRun = false, today = new Date(), quiet = false, fake }, progress) {
   const say = quiet ? () => {} : log;
   const schema = JSON.parse(await readFile(path.join(ROOT, "schema/duck-library.json"), "utf8"));
   const sampleData = JSON.parse(await readFile(path.join(ROOT, "data/samples.json"), "utf8"));
   const sem = semestersFor(today);
-  const n = createNotion({ token, dryRun, log: say });
+  const n = createNotion({ token, dryRun, fake, log: say, ...(dryRun ? { gapMs: 0, backoffMs: 1 } : {}) });
   const warnings = [];
   const warn = (m) => {
     warnings.push(m);
@@ -106,6 +116,7 @@ export async function install({ token, parentId, samples = true, dryRun = false,
       properties: { title: { title: rt(schema.home.title) } },
     })
   );
+  progress.homeUrl = home.url;
   // DB를 담을 페이지는 우선 부모 아래에 만들고, 홈 구성이 끝나면 홈 맨 아래로 옮겨요(원본과 같은 배치).
   const dataPage = await n.call("데이터 페이지 만들기", (c) =>
     c.pages.create({
@@ -130,7 +141,7 @@ export async function install({ token, parentId, samples = true, dryRun = false,
         initial_data_source: { properties },
       })
     );
-    if (!db.data_sources?.length) db = await n.call(`DB 다시 읽기: ${def.title}`, (c) => c.databases.retrieve({ database_id: db.id }));
+    if (!db.data_sources?.length) db = await n.call(`DB 다시 읽기: ${def.title}`, (c) => c.databases.retrieve({ database_id: db.id }), { read: true });
     dbs[def.key] = { id: db.id, url: db.url, dsId: db.data_sources[0].id, def };
     say(`   · ${def.icon} ${def.title}`);
   }
@@ -193,15 +204,24 @@ export async function install({ token, parentId, samples = true, dryRun = false,
   say("⑤ 보기(캘린더·보드) 추가하는 중");
   for (const v of schema.dbViews) {
     try {
-      const info = await n.call(`속성 ID 읽기: ${v.db}`, (c) => c.dataSources.retrieve({ data_source_id: ds(v.db) }));
-      const pid = (name) => info.properties[name]?.id;
-      const configuration =
+      const info = await n.call(`속성 ID 읽기: ${v.db}`, (c) => c.dataSources.retrieve({ data_source_id: ds(v.db) }), { read: true });
+      const configFor = (pid) =>
         v.type === "calendar"
           ? { type: "calendar", date_property_id: pid(v.dateProp) }
           : { type: "board", group_by: { type: "select", property_id: pid(v.groupBy), sort: { type: "manual" } } };
-      await n.call(`보기: ${v.name}`, (c) =>
-        c.views.create({ database_id: dbs[v.db].id, data_source_id: ds(v.db), name: v.name, type: v.type, configuration })
-      );
+      const create = (configuration) =>
+        n.call(`보기: ${v.name}`, (c) =>
+          c.views.create({ database_id: dbs[v.db].id, data_source_id: ds(v.db), name: v.name, type: v.type, configuration })
+        );
+      const rawId = (name) => info.properties[name]?.id;
+      try {
+        await create(configFor(rawId));
+      } catch (e) {
+        // 속성 ID가 URL 인코딩된 형태(%3A…)라서 거절됐을 수 있어요. 풀어서 한 번 더 시도해요.
+        const decoded = (name) => decodeURIComponent(rawId(name) ?? "");
+        if (e.code !== "validation_error" || decoded(v.dateProp ?? v.groupBy) === rawId(v.dateProp ?? v.groupBy)) throw e;
+        await create(configFor(decoded));
+      }
     } catch (e) {
       warn(`'${v.name}' 보기는 만들지 못했어요. Notion에서 직접 추가할 수 있어요. (${e.message.split("\n")[0]})`);
     }
@@ -354,7 +374,8 @@ async function main() {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch((e) => {
     console.error(`\n❌ 설치가 멈췄어요.\n${e.message}`);
-    console.error("이미 만들어진 페이지가 있다면 Notion에서 지우고 다시 실행해 주세요.");
+    if (e.progress?.homeUrl) console.error(`\n여기까지 만든 홈 페이지: ${e.progress.homeUrl}`);
+    console.error("만들다 만 DUCK LIBRARY 페이지(와 함께 생긴 '원본 데이터' 페이지)를 Notion에서 지우고 다시 실행해 주세요.");
     process.exit(1);
   });
 }

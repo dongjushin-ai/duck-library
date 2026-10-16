@@ -14,7 +14,16 @@ class FakeError extends Error {
 const shortId = () => Math.random().toString(36).slice(2, 6);
 
 export class FakeNotion {
-  constructor() {
+  /**
+   * @param {object} [opts]
+   * @param {boolean} [opts.honorSyncedName] true면 역관계 이름(synced_property_name)을 그대로 받아 줘요.
+   *   false(기본)면 실제 API가 무시하는 경우를 흉내 내서 'Related to …'로 이름을 붙여요.
+   * @param {Array<{op: string, nth?: number, status: number, retryAfter?: number}>} [opts.failures]
+   *   지정한 호출(op)의 nth번째(1부터)에서 한 번 오류를 던져요. 재시도 경로 검사용.
+   */
+  constructor({ honorSyncedName = false, failures = [] } = {}) {
+    this.honorSyncedName = honorSyncedName;
+    this.failures = failures.map((f) => ({ nth: 1, ...f, seen: 0, done: false }));
     // 내부 상태
     this._pages = new Map(); // id -> { parent, title, children: [] }
     this._blocks = new Map(); // blockId -> { parent, type }
@@ -24,18 +33,37 @@ export class FakeNotion {
     this.log = [];
 
     // SDK와 같은 모양의 메서드
-    this.databases = { create: async (a) => this.#createDb(a) };
+    const api = (op, fn) => async (a) => {
+      this.#maybeFail(op);
+      return fn(a);
+    };
+    this.databases = { create: api("databases.create", (a) => this.#createDb(a)) };
     this.dataSources = {
-      update: async (a) => this.#updateDs(a),
-      retrieve: async (a) => this.#dsObject(a.data_source_id),
+      update: api("dataSources.update", (a) => this.#updateDs(a)),
+      retrieve: api("dataSources.retrieve", (a) => this.#dsObject(a.data_source_id)),
     };
     this.pages = {
-      create: async (a) => this.#createPage(a),
-      update: async (a) => this.#updatePage(a),
-      move: async (a) => this.#movePage(a),
+      create: api("pages.create", (a) => this.#createPage(a)),
+      update: api("pages.update", (a) => this.#updatePage(a)),
+      move: api("pages.move", (a) => this.#movePage(a)),
     };
-    this.blocks = { children: { append: async (a) => this.#append(a) } };
-    this.views = { create: async (a) => this.#createView(a) };
+    this.blocks = { children: { append: api("blocks.append", (a) => this.#append(a)) } };
+    this.views = { create: api("views.create", (a) => this.#createView(a)) };
+  }
+
+  #maybeFail(op) {
+    for (const f of this.failures) {
+      if (f.op !== op || f.done) continue;
+      f.seen++;
+      if (f.seen === f.nth) {
+        f.done = true;
+        const e = new Error(`가짜 ${f.status} 오류 (${op})`);
+        e.status = f.status;
+        e.code = f.status === 429 ? "rate_limited" : f.status === 529 ? "service_overload" : "service_unavailable";
+        e.headers = new Headers(f.retryAfter ? { "retry-after": String(f.retryAfter) } : {});
+        throw e;
+      }
+    }
   }
 
   #record(op, detail) {
@@ -154,7 +182,8 @@ export class FakeNotion {
     if (type === "relation" && config.type === "dual_property") {
       const target = this.ds.get(config.data_source_id);
       // 실제 API가 synced_property_name을 무시할 수도 있다는 가정으로, 일부러 기본 이름을 붙여 이름 바꾸기 경로를 검사합니다.
-      const backName = `Related to ${ds.title} (${name})`;
+      const wanted = config.dual_property?.synced_property_name;
+      const backName = this.honorSyncedName && wanted ? wanted : `Related to ${ds.title} (${name})`;
       const backId = shortId();
       target.props.set(backName, {
         id: backId,

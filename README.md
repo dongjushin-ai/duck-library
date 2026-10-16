@@ -39,7 +39,7 @@ flowchart LR
 
 ## 설치 (10분)
 
-필요한 것: [Node.js](https://nodejs.org) 18 이상, Notion 계정 (무료 플랜도 돼요)
+필요한 것: [Node.js](https://nodejs.org) 18 이상, Notion 계정 (무료 플랜도 돼요. 다만 무료 워크스페이스의 블록 수 한도에 거의 찼다면 설치 중에 막힐 수 있어요)
 
 ### 1. Notion 통합 만들기
 
@@ -120,7 +120,7 @@ npm run dry-run   # 설치 단계만 출력
 ```
 
 - Notion API 버전 `2026-03-11`, 공식 SDK `@notionhq/client` 5.27.0을 써요.
-- 호출 사이에 0.35초 간격을 두고, 429 응답은 `Retry-After`만큼 기다렸다 다시 보내요.
+- 호출 사이에 0.35초 간격을 두고, 429·529 응답은 `Retry-After`만큼 기다렸다 다시 보내요. 읽기 요청은 일시적인 5xx도 다시 보내지만, 쓰기 요청은 이미 저장됐을 수 있어 중복을 막으려고 멈춰요.
 - 코드 구성: `src/setup.js`(설치 순서) · `src/content.js`(홈·가이드 문구) · `src/blocks.js`(블록 도우미) · `src/notion.js`(API 호출) · `src/fake-notion.js`(테스트용 가짜 Notion)
 
 ## 라이선스

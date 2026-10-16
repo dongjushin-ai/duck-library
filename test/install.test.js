@@ -107,3 +107,36 @@ test("입력 도우미", () => {
   assert.equal(isoDate(new Date(2026, 9, 14), -14), "2026-09-30");
   assert.equal(isoDate(new Date(2026, 11, 30), 3), "2027-01-02");
 });
+
+test("실제 API가 역관계 이름을 받아 주는 경우에도 구조가 같다", async () => {
+  const { FakeNotion } = await import("../src/fake-notion.js");
+  const fake = new FakeNotion({ honorSyncedName: true });
+  const { notion, result } = await run({ fake });
+  const names = [...notion.raw.ds.values()].flatMap((d) => [...d.props.keys()]);
+  assert.ok(!names.some((n) => n.startsWith("Related to")));
+  assert.deepEqual(result.warnings, []);
+});
+
+test("429·529는 기다렸다 다시 보내고, 읽기 요청은 503도 다시 보낸다", async () => {
+  const { FakeNotion } = await import("../src/fake-notion.js");
+  const fake = new FakeNotion({
+    failures: [
+      { op: "pages.create", nth: 5, status: 429, retryAfter: 0 },
+      { op: "dataSources.update", nth: 3, status: 529 },
+      { op: "dataSources.retrieve", nth: 1, status: 503 },
+    ],
+  });
+  const { result } = await run({ fake });
+  assert.equal(result.sampleRows, 20);
+  assert.deepEqual(result.warnings, []);
+});
+
+test("쓰기 요청이 503이면 중복을 막으려고 멈추고, 만든 홈 주소를 알려 준다", async () => {
+  const { FakeNotion } = await import("../src/fake-notion.js");
+  const fake = new FakeNotion({ failures: [{ op: "databases.create", nth: 2, status: 503 }] });
+  await assert.rejects(run({ fake }), (e) => {
+    assert.match(e.message, /DB 만들기/);
+    assert.match(e.progress.homeUrl, /^https:\/\/www\.notion\.so\//);
+    return true;
+  });
+});
