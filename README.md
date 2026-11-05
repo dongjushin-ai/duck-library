@@ -1,5 +1,7 @@
 # 📚 DUCK LIBRARY · 대학생 세컨드브레인
 
+[English](README.en.md)
+
 수업·과제·활동에서 나오는 기록을 **RAW → WIKI → OUTPUT** 3단계로 바꿔서, 학기가 끝날 때 **포트폴리오와 이력서 재료가 남는** 대학생용 Notion 작업실이에요.
 
 이 저장소는 그 작업실을 **내 Notion에 명령 한 줄로 설치**해 줍니다. 템플릿 복제와 달리 DB 이름·속성·관계·수식이 전부 코드로 적혀 있어서, 내 학교·전공에 맞게 고쳐서 설치할 수도 있어요.
@@ -13,7 +15,7 @@
 
 **[플래너 바로 쓰기](https://dongjushin-ai.github.io/duck-library/)** · 설치도 가입도 없어요. 전공과 코딩 경험도 상관없어요.
 
-![역량 서가와 이번 주 계획표가 보이는 플래너 대시보드](planner/preview.png)
+![공고에서 역량 서가, 이번 주 계획표, 로드맵까지 이어지는 플래너 데모](planner/demo.gif)
 
 1. 목표 직무와 쓸 수 있는 시간을 적고 채용공고를 붙여넣어요.
 2. 공고에서 요구 역량을 찾아 **근거 문장**과 함께 보여 줘요. 사전에 없어 못 읽은 요건도 숨기지 않아요.
@@ -142,6 +144,10 @@ npm run planner:build  # 플래너를 dist/index.html 한 파일로 빌드
 - 호출 사이에 0.35초 간격을 두고, 429·529 응답은 `Retry-After`만큼 기다렸다 다시 보내요. 읽기 요청은 일시적인 5xx도 다시 보내지만, 쓰기 요청은 이미 저장됐을 수 있어 중복을 막으려고 멈춰요.
 - 플래너는 의존성 없이 빌드해요. `planner/build.js`가 `planner/src`를 HTML 한 파일로 합치고 스크립트·스타일 해시로 CSP를 만들어요. `main`에 올라가면 GitHub Pages로 배포돼요.
 - 코드 구성: `src/setup.js`(설치 순서) · `src/content.js`(홈·가이드 문구) · `src/blocks.js`(블록 도우미) · `src/notion.js`(API 호출) · `src/fake-notion.js`(테스트용 가짜 Notion)
+
+## 함께 쓰면 좋은 것
+
+[duck-skills](https://github.com/dongjushin-ai/duck-skills)는 강의 정리, 교수님 메일, 과제 점검처럼 대학생이 바로 쓰는 Claude 스킬 모음이에요.
 
 ## 라이선스
 
