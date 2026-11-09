@@ -27,7 +27,9 @@
 
 **입력한 내용은 밖으로 나가지 않아요.** 서버도 분석 도구도 없고, 페이지의 보안 정책(CSP)이 외부 요청 자체를 막아요. 데이터는 브라우저와 내가 저장한 파일에만 있어요. 방문 기록을 지우면 자동 저장도 사라지니 `내 HTML 저장`으로 보관해 주세요.
 
-내 컴퓨터에서 직접 만들고 싶다면 `npm run planner:build` 후 `dist/index.html`을 열면 돼요. 공고 분석은 [`planner/src/skills.js`](planner/src/skills.js) 사전을 쓰는 규칙 방식이라, 역량을 추가하는 PR은 언제나 환영해요. 기획과 백로그는 [`planner/BRIEF.md`](planner/BRIEF.md)에 있어요.
+내 컴퓨터에서 직접 만들고 싶다면 `npm run planner:build` 후 `dist/index.html`을 열면 돼요.
+
+**공고 분석 정확도.** 공고 분석은 AI가 아니라 [`planner/src/skills.js`](planner/src/skills.js) 사전을 쓰는 규칙 방식이에요. 분석기를 보지 않은 사람이 정답을 단 가상 공고 53개(4묶음)로 재요. 고치기 전에 처음 잰 마지막 묶음 결과는 정밀도 87%, 재현율 80%였고, 그 뒤 고쳐서 지금은 네 묶음 모두 정밀도 94% 이상, 재현율 96% 이상이에요. 사전 밖 역량(간호, 공공기관 사무, 게임 QA 등)은 "못 읽은 요건"으로 보여 줘요. `npm run planner:bench`로 직접 확인할 수 있고, 역량을 추가하는 PR은 언제나 환영해요. 기획과 백로그는 [`planner/BRIEF.md`](planner/BRIEF.md)에 있어요.
 
 ## Notion 작업실에 설치하면 생기는 것
 
