@@ -1,14 +1,14 @@
 # 📚 DUCK LIBRARY
 
-**Paste job postings, get today's tasks.** A private career planner and second brain for Korean college students.
+**Paste job postings, get today's tasks.** DUCK LIBRARY is a second brain for Korean college students, home to the DuckStep career planner.
 
 [한국어](README.md)
 
-**[Open the planner](https://dongjushin-ai.github.io/duck-library/)** · No install, no account, no server.
+**[Open DuckStep](https://dongjushin-ai.github.io/duck-library/)** · No install, no account, no server.
 
 ![Planner demo in Korean](planner/demo.gif)
 
-## Career planner
+## DuckStep career planner
 
 1. Enter your target role, available hours, and job postings.
 2. See required skills with the exact sentence each one came from. Requirements the dictionary cannot read stay visible.

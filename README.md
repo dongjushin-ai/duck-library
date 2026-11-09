@@ -11,9 +11,9 @@
  떠오를 때마다 던지기     일주일에 한 번 내 말로 정리     활동이 끝나면 이력서·자소서 재료로
 ```
 
-## 🎯 진로 플래너: 공고를 넣으면 오늘 할 일이 나와요
+## 🎯 덕스텝: 공고를 넣으면 오늘 할 일이 나와요
 
-**[플래너 바로 쓰기](https://dongjushin-ai.github.io/duck-library/)** · 설치도 가입도 없어요. 전공과 코딩 경험도 상관없어요.
+**[덕스텝 바로 쓰기](https://dongjushin-ai.github.io/duck-library/)** · 설치도 가입도 없어요. 전공과 코딩 경험도 상관없어요.
 
 ![공고에서 역량 서가, 이번 주 계획표, 로드맵까지 이어지는 플래너 데모](planner/demo.gif)
 
@@ -149,7 +149,7 @@ npm run planner:build  # 플래너를 dist/index.html 한 파일로 빌드
 
 ## 함께 쓰면 좋은 것
 
-[duck-skills](https://github.com/dongjushin-ai/duck-skills)는 강의 정리, 교수님 메일, 과제 점검처럼 대학생이 바로 쓰는 Claude 스킬 모음이에요.
+[꽥팩 QuackPack](https://github.com/dongjushin-ai/quackpack)은 강의 정리, 교수님 메일, 과제 속 숨은 AI 함정을 찾는 함정카드 탐지기처럼 대학생이 바로 쓰는 Claude 스킬 모음이에요.
 
 ## 라이선스
 

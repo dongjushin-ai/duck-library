@@ -98,7 +98,7 @@ function saveHtml() {
   copy.querySelector("#app").replaceChildren();
   copy.querySelector("#toast").textContent = "";
   copy.querySelector("#duck-data").textContent = embedJson(state);
-  copy.querySelector("title").textContent = `${state.profile.name ? `${state.profile.name}의 ` : ""}진로 플래너`;
+  copy.querySelector("title").textContent = `${state.profile.name ? `${state.profile.name}의 ` : ""}덕스텝`;
   download(`duck-planner-${today()}.html`, `<!doctype html>\n${copy.outerHTML}`, "text/html;charset=utf-8");
   toast("내 HTML을 저장했어요. 다음에는 이 파일을 열면 이어서 쓸 수 있어요.");
   render();
@@ -383,7 +383,7 @@ function topbar() {
   return h(
     "header",
     { class: "topbar" },
-    h("div", { class: "wordmark" }, "DUCK LIBRARY"),
+    h("div", { class: "wordmark" }, "덕스텝", h("span", { class: "wordmark-sub" }, " DuckStep")),
     h(
       "nav",
       { class: "nav", "aria-label": "화면" },
@@ -1332,7 +1332,7 @@ function viewSettings() {
 const VIEWS = { dashboard: viewDashboard, postings: viewPostings, experiences: viewExperiences, schedule: viewSchedule, settings: viewSettings };
 
 const VIEW_TITLE = { dashboard: "대시보드", postings: "공고", experiences: "경험 은행", schedule: "일정", settings: "설정" };
-const APP_TITLE = "DUCK LIBRARY 진로 플래너";
+const APP_TITLE = "덕스텝";
 
 // 다시 그린 뒤에도 포커스를 잃지 않게 한다. 같은 키의 요소가 없으면 화면 제목으로 보낸다.
 function restoreFocus(focusKey, hadFocus) {

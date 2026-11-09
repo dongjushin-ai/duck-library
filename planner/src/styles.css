@@ -63,6 +63,7 @@ h1[tabindex="-1"]:focus { outline: none; }
   padding: 18px 0; border-bottom: 2px solid var(--ink);
 }
 .wordmark { font-weight: 800; font-size: 19px; letter-spacing: -0.01em; white-space: nowrap; }
+.wordmark-sub { font-weight: 600; color: var(--muted); }
 .nav { display: flex; flex-wrap: wrap; gap: 2px; flex: 1; }
 .nav button {
   border: 0; background: none; padding: 6px 12px; min-height: 40px; border-radius: 6px; color: var(--muted); font-weight: 600;
