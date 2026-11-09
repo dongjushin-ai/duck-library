@@ -1,0 +1,1079 @@
+[
+ {
+  "id": "be-1",
+  "role": "백엔드 개발",
+  "text": "[(가상) 모아페이] 백엔드 개발자 (신입·경력 1년 미만)\n\n모아페이는 간편결제 스타트업입니다. 사내에서는 Kubernetes와 Kafka 기반의 마이크로서비스 아키텍처를 운영하고 있고, 매달 사내 기술 세미나도 열어요.\n\n주요 업무\n- Spring Boot 기반 결제 API 설계 및 개발\n- MySQL 쿼리 튜닝 및 스키마 설계\n- 서비스 장애 대응 및 모니터링\n\n자격 요건\n- Java 또는 Kotlin으로 서버를 개발해 본 경험 (팀 프로젝트 포함)\n- RDBMS에 대한 기본 이해\n- Git으로 협업해 본 경험\n- 원활한 커뮤니케이션 능력\n\n우대 사항\n- AWS 사용 경험\n- Redis 등 캐시 활용 경험\n- Docker 사용 경험\n\n혜택: 맥북 지급, 점심 식대 지원",
+  "labels": [
+   {
+    "skill": "Java",
+    "type": "required",
+    "evidence": "Java 또는 Kotlin으로",
+    "id": "java"
+   },
+   {
+    "skill": "Kotlin",
+    "type": "required",
+    "evidence": "Java 또는 Kotlin으로",
+    "id": "kotlin"
+   },
+   {
+    "skill": "RDBMS",
+    "type": "required",
+    "evidence": "RDBMS에 대한 기본 이해",
+    "id": "database"
+   },
+   {
+    "skill": "Git",
+    "type": "required",
+    "evidence": "Git으로 협업해 본 경험",
+    "id": "git"
+   },
+   {
+    "skill": "커뮤니케이션 능력",
+    "type": "required",
+    "evidence": "원활한 커뮤니케이션 능력",
+    "id": "communication"
+   },
+   {
+    "skill": "Spring Boot",
+    "type": "duties",
+    "evidence": "Spring Boot 기반 결제 API 설계 및 개발",
+    "id": "spring"
+   },
+   {
+    "skill": "API 설계",
+    "type": "duties",
+    "evidence": "결제 API 설계",
+    "id": "api"
+   },
+   {
+    "skill": "MySQL",
+    "type": "duties",
+    "evidence": "MySQL 쿼리 튜닝",
+    "id": "database"
+   },
+   {
+    "skill": "스키마 설계",
+    "type": "duties",
+    "evidence": "스키마 설계",
+    "id": "database"
+   },
+   {
+    "skill": "장애 대응",
+    "type": "duties",
+    "evidence": "서비스 장애 대응",
+    "id": null
+   },
+   {
+    "skill": "모니터링",
+    "type": "duties",
+    "evidence": "모니터링",
+    "id": "monitoring"
+   },
+   {
+    "skill": "AWS",
+    "type": "preferred",
+    "evidence": "AWS 사용 경험",
+    "id": "cloud"
+   },
+   {
+    "skill": "Redis",
+    "type": "preferred",
+    "evidence": "Redis 등 캐시 활용 경험",
+    "id": "database"
+   },
+   {
+    "skill": "Docker",
+    "type": "preferred",
+    "evidence": "Docker 사용 경험",
+    "id": "docker"
+   }
+  ]
+ },
+ {
+  "id": "fe-1",
+  "role": "프론트엔드 개발",
+  "text": "■ 채용공고 | (가상) 한울정보시스템 프론트엔드 개발자 신입 공채\n\n회사소개: 한울정보시스템은 공공·금융 IT 서비스 전문 기업으로 Java 기반 대형 SI 프로젝트와 AI 서비스를 수행하고 있습니다.\n\n구분 | 내용\n모집부문 | 프론트엔드 개발 (신입)\n담당업무 | React 기반 웹 서비스 화면 개발 / 공통 UI 컴포넌트 구현 / 웹 성능 최적화\n필수자격 | HTML, CSS, JavaScript 활용 능력 / Git을 이용한 협업 경험 / 4년제 졸업(예정)자\n우대사항 | TypeScript 사용 경험 / Next.js 프로젝트 경험 / 웹 접근성에 대한 이해\n근무조건 | 정규직, 서울 서초구, 수습 3개월\n복리후생 | 사내 Python 스터디 지원, 자기계발비, 건강검진",
+  "labels": [
+   {
+    "skill": "HTML",
+    "type": "required",
+    "evidence": "HTML, CSS, JavaScript 활용 능력",
+    "id": "htmlcss"
+   },
+   {
+    "skill": "CSS",
+    "type": "required",
+    "evidence": "HTML, CSS, JavaScript 활용 능력",
+    "id": "htmlcss"
+   },
+   {
+    "skill": "JavaScript",
+    "type": "required",
+    "evidence": "HTML, CSS, JavaScript 활용 능력",
+    "id": "javascript"
+   },
+   {
+    "skill": "Git",
+    "type": "required",
+    "evidence": "Git을 이용한 협업 경험",
+    "id": "git"
+   },
+   {
+    "skill": "React",
+    "type": "duties",
+    "evidence": "React 기반 웹 서비스 화면 개발",
+    "id": "react"
+   },
+   {
+    "skill": "UI 컴포넌트 구현",
+    "type": "duties",
+    "evidence": "공통 UI 컴포넌트 구현",
+    "id": null
+   },
+   {
+    "skill": "웹 성능 최적화",
+    "type": "duties",
+    "evidence": "웹 성능 최적화",
+    "id": null
+   },
+   {
+    "skill": "TypeScript",
+    "type": "preferred",
+    "evidence": "TypeScript 사용 경험",
+    "id": "typescript"
+   },
+   {
+    "skill": "Next.js",
+    "type": "preferred",
+    "evidence": "Next.js 프로젝트 경험",
+    "id": "react"
+   },
+   {
+    "skill": "웹 접근성",
+    "type": "preferred",
+    "evidence": "웹 접근성에 대한 이해",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "da-1",
+  "role": "데이터 분석",
+  "text": "[(가상) 대한유통그룹 2026 하반기 신입사원 공개채용]\n\n1. 모집분야: 데이터 분석 (마케팅 데이터팀)\n2. 담당업무\n 가. 고객 구매 데이터 분석 및 인사이트 도출\n 나. 경영진 보고용 대시보드 구축\n 다. 프로모션 A/B 테스트 설계 및 결과 분석\n3. 지원자격\n 가. 4년제 대학 졸업 또는 졸업예정자\n 나. SQL을 활용한 데이터 추출 가능자\n 다. 통계 기초 지식 보유자 (가설검정, 회귀분석)\n 라. 해외여행 결격사유가 없는 자, 남자의 경우 병역필 또는 면제자\n4. 우대사항\n 가. Python 또는 R로 분석해 본 경험\n 나. Tableau 활용 가능자\n 다. ADsP 자격증 소지자\n5. 전형절차: 서류 - 직무적성검사 - 1차 면접 - 2차 면접 - 최종합격",
+  "labels": [
+   {
+    "skill": "SQL",
+    "type": "required",
+    "evidence": "SQL을 활용한 데이터 추출 가능자",
+    "id": "sql"
+   },
+   {
+    "skill": "통계",
+    "type": "required",
+    "evidence": "통계 기초 지식 보유자",
+    "id": "stats"
+   },
+   {
+    "skill": "데이터 분석",
+    "type": "duties",
+    "evidence": "고객 구매 데이터 분석",
+    "id": "datanalysis"
+   },
+   {
+    "skill": "인사이트 도출",
+    "type": "duties",
+    "evidence": "인사이트 도출",
+    "id": null
+   },
+   {
+    "skill": "대시보드 구축",
+    "type": "duties",
+    "evidence": "대시보드 구축",
+    "id": "bi"
+   },
+   {
+    "skill": "A/B 테스트",
+    "type": "duties",
+    "evidence": "A/B 테스트 설계 및 결과 분석",
+    "id": "abtest"
+   },
+   {
+    "skill": "Python",
+    "type": "preferred",
+    "evidence": "Python 또는 R로 분석해 본 경험",
+    "id": "python"
+   },
+   {
+    "skill": "R",
+    "type": "preferred",
+    "evidence": "Python 또는 R로 분석해 본 경험",
+    "id": "r"
+   },
+   {
+    "skill": "Tableau",
+    "type": "preferred",
+    "evidence": "Tableau 활용 가능자",
+    "id": "tableau"
+   },
+   {
+    "skill": "ADsP",
+    "type": "preferred",
+    "evidence": "ADsP 자격증 소지자",
+    "id": "adsp"
+   }
+  ]
+ },
+ {
+  "id": "de-1",
+  "role": "데이터 엔지니어",
+  "text": "(가상) Northwind Logistics Korea - Data Engineer (New Grad / Entry-level)\n\nAbout us: We are the Korean branch of a global logistics company. Our engineers enjoy a yearly budget for Kubernetes certification and a hackathon day each quarter.\n\nWhat you will do\n- Build and maintain ETL pipelines with Apache Airflow and Spark\n- Manage our data warehouse on BigQuery\n- Monitor data quality and fix broken jobs\n\nWhat we are looking for\n- Proficiency in Python and SQL\n- Understanding of data modeling concepts\n- Fluent written and spoken English; you will work with our global team daily\n- Experience with Hadoop is not necessary\n\nNice to have\n- Experience with Kafka\n- Hands-on dbt projects\n- Familiarity with Terraform\n\nLocation: Seoul, hybrid. We welcome new graduates and career changers.",
+  "labels": [
+   {
+    "skill": "Python",
+    "type": "required",
+    "evidence": "Proficiency in Python and SQL",
+    "id": "python"
+   },
+   {
+    "skill": "SQL",
+    "type": "required",
+    "evidence": "Proficiency in Python and SQL",
+    "id": "sql"
+   },
+   {
+    "skill": "데이터 모델링",
+    "type": "required",
+    "evidence": "Understanding of data modeling concepts",
+    "id": "database"
+   },
+   {
+    "skill": "영어",
+    "type": "required",
+    "evidence": "Fluent written and spoken English",
+    "id": "english"
+   },
+   {
+    "skill": "ETL 파이프라인",
+    "type": "duties",
+    "evidence": "Build and maintain ETL pipelines",
+    "id": "pipeline"
+   },
+   {
+    "skill": "Airflow",
+    "type": "duties",
+    "evidence": "Apache Airflow",
+    "id": "pipeline"
+   },
+   {
+    "skill": "Spark",
+    "type": "duties",
+    "evidence": "Spark",
+    "id": "pipeline"
+   },
+   {
+    "skill": "BigQuery",
+    "type": "duties",
+    "evidence": "BigQuery",
+    "id": "database"
+   },
+   {
+    "skill": "데이터 품질 모니터링",
+    "type": "duties",
+    "evidence": "Monitor data quality",
+    "id": null
+   },
+   {
+    "skill": "Kafka",
+    "type": "preferred",
+    "evidence": "Experience with Kafka",
+    "id": "pipeline"
+   },
+   {
+    "skill": "dbt",
+    "type": "preferred",
+    "evidence": "Hands-on dbt projects",
+    "id": "pipeline"
+   },
+   {
+    "skill": "Terraform",
+    "type": "preferred",
+    "evidence": "Familiarity with Terraform",
+    "id": "iac"
+   }
+  ]
+ },
+ {
+  "id": "ai-1",
+  "role": "AI 연구 인턴",
+  "text": "(가상) 한결전자 AI연구소는 2027년 동계 연구 인턴을 모집합니다. 인턴은 멘토 연구원과 함께 거대 언어모델 경량화 연구에 참여하며, 최신 논문을 구현하고 재현 실험을 수행한 뒤 결과를 정리해 팀 세미나에서 발표하는 일을 맡게 됩니다. 지원 자격은 컴퓨터공학·수학·통계 관련 석사 과정 재학생으로, PyTorch로 딥러닝 모델을 직접 구현해 본 경험이 있어야 하고 선형대수와 확률에 대한 이해가 필요합니다. 영어 논문을 읽는 데 어려움이 없어야 합니다. 국제 학회에 논문을 게재한 경험이 있거나 CUDA 프로그래밍을 해 본 분은 우대합니다. 연구소에는 대규모 GPU 클러스터와 Slurm 기반 학습 환경이 갖춰져 있고, 인턴 기간 중 식대와 숙소가 지원됩니다. 연구 주제는 면접 후 협의하여 정합니다.",
+  "labels": [
+   {
+    "skill": "PyTorch",
+    "type": "required",
+    "evidence": "PyTorch로",
+    "id": "ml"
+   },
+   {
+    "skill": "딥러닝",
+    "type": "required",
+    "evidence": "딥러닝 모델을 직접 구현해 본 경험",
+    "id": "ml"
+   },
+   {
+    "skill": "선형대수",
+    "type": "required",
+    "evidence": "선형대수와 확률에 대한 이해",
+    "id": "math"
+   },
+   {
+    "skill": "확률",
+    "type": "required",
+    "evidence": "선형대수와 확률에 대한 이해",
+    "id": "math"
+   },
+   {
+    "skill": "영어 논문 독해",
+    "type": "required",
+    "evidence": "영어 논문을 읽는 데 어려움이 없어야",
+    "id": "english"
+   },
+   {
+    "skill": "거대 언어모델 경량화",
+    "type": "duties",
+    "evidence": "거대 언어모델 경량화 연구",
+    "id": "llm"
+   },
+   {
+    "skill": "논문 구현",
+    "type": "duties",
+    "evidence": "최신 논문을 구현",
+    "id": null
+   },
+   {
+    "skill": "재현 실험",
+    "type": "duties",
+    "evidence": "재현 실험을 수행",
+    "id": null
+   },
+   {
+    "skill": "발표",
+    "type": "duties",
+    "evidence": "팀 세미나에서 발표",
+    "id": "ppt"
+   },
+   {
+    "skill": "논문 게재",
+    "type": "preferred",
+    "evidence": "국제 학회에 논문을 게재한 경험",
+    "id": null
+   },
+   {
+    "skill": "CUDA",
+    "type": "preferred",
+    "evidence": "CUDA 프로그래밍",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "app-1",
+  "role": "앱 개발",
+  "text": "🚀 우리는\n(가상) 모닝루틴랩은 습관 형성 앱 '루틴핏'을 만드는 8명의 스타트업이에요. 사내 Unity 게임잼도 열어요!\n\n🎯 이런 일을 해요\n- Flutter로 iOS/Android 앱 개발\n- 푸시 알림, 인앱결제 기능 구현\n- Firebase 연동 및 앱 성능 개선\n\n✅ 이런 분을 찾아요\n- Dart 언어를 이해하고 계신 분\n- REST API 연동 경험이 있는 분 (사이드 프로젝트도 OK!)\n- 앱스토어 또는 플레이스토어에 앱을 출시해 본 분\n\n✨ 이런 분이면 더 좋아요\n- Kotlin 또는 Swift 네이티브 개발 경험\n- CI/CD 파이프라인 구축 경험\n\n🎁 이런 복지가 있어요\n점심 제공, 무제한 커피, 재택 주 2회, 도서 구입비 지원",
+  "labels": [
+   {
+    "skill": "Dart",
+    "type": "required",
+    "evidence": "Dart 언어를 이해",
+    "id": "flutter"
+   },
+   {
+    "skill": "REST API",
+    "type": "required",
+    "evidence": "REST API 연동 경험",
+    "id": "api"
+   },
+   {
+    "skill": "앱 출시",
+    "type": "required",
+    "evidence": "앱을 출시해 본 분",
+    "id": null
+   },
+   {
+    "skill": "Flutter",
+    "type": "duties",
+    "evidence": "Flutter로 iOS/Android 앱 개발",
+    "id": "flutter"
+   },
+   {
+    "skill": "푸시 알림",
+    "type": "duties",
+    "evidence": "푸시 알림",
+    "id": null
+   },
+   {
+    "skill": "인앱결제",
+    "type": "duties",
+    "evidence": "인앱결제",
+    "id": null
+   },
+   {
+    "skill": "Firebase",
+    "type": "duties",
+    "evidence": "Firebase 연동",
+    "id": null
+   },
+   {
+    "skill": "앱 성능 개선",
+    "type": "duties",
+    "evidence": "앱 성능 개선",
+    "id": null
+   },
+   {
+    "skill": "Kotlin",
+    "type": "preferred",
+    "evidence": "Kotlin 또는 Swift 네이티브 개발 경험",
+    "id": "kotlin"
+   },
+   {
+    "skill": "Swift",
+    "type": "preferred",
+    "evidence": "Kotlin 또는 Swift 네이티브 개발 경험",
+    "id": "ios"
+   },
+   {
+    "skill": "CI/CD",
+    "type": "preferred",
+    "evidence": "CI/CD 파이프라인 구축 경험",
+    "id": "cicd"
+   }
+  ]
+ },
+ {
+  "id": "pl-1",
+  "role": "서비스 기획",
+  "text": "[(가상) 오늘의책방] 서비스 기획자 신입 모집\n\n오늘의책방은 React Native로 만든 독서 구독 앱을 운영하는 스타트업입니다.\n\n하는 일: 신규 기능의 요구사항 정의, 서비스 로드맵 수립, 사용자 인터뷰 진행\n\n데이터 기반으로 의사결정해 본 경험이 있다면 좋고, 특히 SQL을 직접 쓸 수 있으면 우대하며, 화면설계서 작성 능력과 개발자·디자이너와의 협업 능력은 반드시 갖추셔야 합니다. Figma로 와이어프레임을 그릴 수 있어야 해요. 코딩은 몰라도 돼요! 경력도 무관합니다.\n\n전형: 서류 - 기획 과제 - 대면 면접\n근무: 서울 마포구, 주 5일, 유연 출퇴근",
+  "labels": [
+   {
+    "skill": "화면설계서 작성",
+    "type": "required",
+    "evidence": "화면설계서 작성 능력",
+    "id": "wireframe"
+   },
+   {
+    "skill": "협업 능력",
+    "type": "required",
+    "evidence": "협업 능력",
+    "id": "collaboration"
+   },
+   {
+    "skill": "Figma",
+    "type": "required",
+    "evidence": "Figma로 와이어프레임을 그릴 수 있어야",
+    "id": "figma"
+   },
+   {
+    "skill": "와이어프레임",
+    "type": "required",
+    "evidence": "와이어프레임",
+    "id": "wireframe"
+   },
+   {
+    "skill": "요구사항 정의",
+    "type": "duties",
+    "evidence": "요구사항 정의",
+    "id": "planning"
+   },
+   {
+    "skill": "서비스 로드맵 수립",
+    "type": "duties",
+    "evidence": "서비스 로드맵 수립",
+    "id": "planning"
+   },
+   {
+    "skill": "사용자 인터뷰",
+    "type": "duties",
+    "evidence": "사용자 인터뷰 진행",
+    "id": "research"
+   },
+   {
+    "skill": "데이터 기반 의사결정",
+    "type": "preferred",
+    "evidence": "데이터 기반으로 의사결정해 본 경험이 있다면 좋고",
+    "id": "datanalysis"
+   },
+   {
+    "skill": "SQL",
+    "type": "preferred",
+    "evidence": "SQL을 직접 쓸 수 있으면 우대",
+    "id": "sql"
+   }
+  ]
+ },
+ {
+  "id": "ux-1",
+  "role": "UX 디자인",
+  "text": "(가상) Lumen Health Korea - UX Designer Intern (6 months)\n\nLumen Health is a digital health company. Our app is built with Swift and our backend runs on Python, but you will not touch any of it. Engineers and designers pair up in a quarterly hackathon.\n\nResponsibilities\n- Conduct user research and interviews with patients\n- Create wireframes and interactive prototypes\n- Run usability tests and summarize findings\n\nRequirements\n- Proficiency in Figma\n- A portfolio that shows your design process\n- Comfortable communicating in English and Korean\n- No coding experience required\n\nPreferred\n- Motion design skills with After Effects\n- Knowledge of accessibility guidelines\n\nPlease attach your portfolio link when you apply.",
+  "labels": [
+   {
+    "skill": "Figma",
+    "type": "required",
+    "evidence": "Proficiency in Figma",
+    "id": "figma"
+   },
+   {
+    "skill": "포트폴리오",
+    "type": "required",
+    "evidence": "A portfolio that shows your design process",
+    "id": null
+   },
+   {
+    "skill": "영어 의사소통",
+    "type": "required",
+    "evidence": "communicating in English and Korean",
+    "id": "english"
+   },
+   {
+    "skill": "사용자 리서치",
+    "type": "duties",
+    "evidence": "user research",
+    "id": "research"
+   },
+   {
+    "skill": "와이어프레임",
+    "type": "duties",
+    "evidence": "wireframes",
+    "id": "wireframe"
+   },
+   {
+    "skill": "프로토타입",
+    "type": "duties",
+    "evidence": "interactive prototypes",
+    "id": "uiux"
+   },
+   {
+    "skill": "사용성 테스트",
+    "type": "duties",
+    "evidence": "usability tests",
+    "id": "research"
+   },
+   {
+    "skill": "After Effects",
+    "type": "preferred",
+    "evidence": "After Effects",
+    "id": "video"
+   },
+   {
+    "skill": "접근성 가이드라인",
+    "type": "preferred",
+    "evidence": "accessibility guidelines",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "cm-1",
+  "role": "콘텐츠 마케팅",
+  "text": "(가상) 한국문화관광진흥원은 2027년 상반기 콘텐츠 마케팅 체험형 청년인턴을 모집합니다. 인턴은 인스타그램과 유튜브 등 SNS 채널을 운영하고, 지역 관광 카드뉴스를 기획하며, 숏폼 영상을 제작하고, 월간 콘텐츠 성과 리포트를 작성하게 됩니다. 포토샵과 프리미어 프로로 간단한 편집을 할 수 있어야 하고, 읽기 쉬운 글쓰기 능력이 필요합니다. 마케팅 경력은 무관하며 전공도 묻지 않습니다. 영상 촬영 경험이 있거나 최신 SNS 트렌드에 밝은 분은 우대합니다. 진흥원은 빅데이터 센터와 AI 번역 서비스도 운영하고 있으나 본 직무와는 무관합니다. 근무지는 강원도 원주이며, 월 급여 200만원과 중식이 제공됩니다. 서류와 면접 두 단계로 선발합니다.",
+  "labels": [
+   {
+    "skill": "포토샵",
+    "type": "required",
+    "evidence": "포토샵",
+    "id": "graphic"
+   },
+   {
+    "skill": "프리미어 프로",
+    "type": "required",
+    "evidence": "프리미어 프로",
+    "id": "video"
+   },
+   {
+    "skill": "글쓰기",
+    "type": "required",
+    "evidence": "글쓰기 능력",
+    "id": null
+   },
+   {
+    "skill": "SNS 채널 운영",
+    "type": "duties",
+    "evidence": "SNS 채널을 운영",
+    "id": "sns"
+   },
+   {
+    "skill": "카드뉴스 기획",
+    "type": "duties",
+    "evidence": "카드뉴스를 기획",
+    "id": null
+   },
+   {
+    "skill": "숏폼 영상 제작",
+    "type": "duties",
+    "evidence": "숏폼 영상을 제작",
+    "id": "video"
+   },
+   {
+    "skill": "성과 리포트 작성",
+    "type": "duties",
+    "evidence": "성과 리포트를 작성",
+    "id": "writing"
+   },
+   {
+    "skill": "영상 촬영",
+    "type": "preferred",
+    "evidence": "영상 촬영 경험",
+    "id": "video"
+   },
+   {
+    "skill": "SNS 트렌드 파악",
+    "type": "preferred",
+    "evidence": "최신 SNS 트렌드에 밝은 분",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "pm-1",
+  "role": "퍼포먼스 마케팅",
+  "text": "[(가상) 데일리핏] 퍼포먼스 마케터 (신입/인턴 전환형)\n\n데일리핏은 월 사용자 50만의 홈트레이닝 앱입니다. 자체 Python 기반 입찰 자동화 툴을 쓰고 있어요.\n\n주요 업무\n- 메타, 구글, 네이버 광고 매체 운영\n- 광고 소재 A/B 테스트\n- ROAS 분석 및 주간 리포트 작성\n\n자격 요건\n- Meta 광고 관리자 운영 경험 (개인 프로젝트, 대행 경험 모두 인정)\n- 엑셀 피벗테이블, VLOOKUP 활용 능력\n- 숫자에 강하고 숫자로 말하는 분\n\n우대 사항\n- GA4 활용 경험\n- SQL 쿼리 작성 가능자\n- AppsFlyer 등 MMP 사용 경험\n\n포토샵은 몰라도 돼요. 소재 제작은 디자인팀이 도와드립니다.",
+  "labels": [
+   {
+    "skill": "Meta 광고",
+    "type": "required",
+    "evidence": "Meta 광고 관리자 운영 경험",
+    "id": "performance"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀 피벗테이블, VLOOKUP 활용 능력",
+    "id": "excel"
+   },
+   {
+    "skill": "수치 분석",
+    "type": "required",
+    "evidence": "숫자에 강하고",
+    "id": null
+   },
+   {
+    "skill": "구글 광고",
+    "type": "duties",
+    "evidence": "구글",
+    "id": "performance"
+   },
+   {
+    "skill": "네이버 광고",
+    "type": "duties",
+    "evidence": "네이버 광고 매체 운영",
+    "id": "performance"
+   },
+   {
+    "skill": "A/B 테스트",
+    "type": "duties",
+    "evidence": "A/B 테스트",
+    "id": "abtest"
+   },
+   {
+    "skill": "ROAS 분석",
+    "type": "duties",
+    "evidence": "ROAS 분석",
+    "id": "performance"
+   },
+   {
+    "skill": "리포트 작성",
+    "type": "duties",
+    "evidence": "주간 리포트 작성",
+    "id": "writing"
+   },
+   {
+    "skill": "GA4",
+    "type": "preferred",
+    "evidence": "GA4 활용 경험",
+    "id": "ga"
+   },
+   {
+    "skill": "SQL",
+    "type": "preferred",
+    "evidence": "SQL 쿼리 작성 가능자",
+    "id": "sql"
+   },
+   {
+    "skill": "AppsFlyer",
+    "type": "preferred",
+    "evidence": "AppsFlyer 등 MMP 사용 경험",
+    "id": "ga"
+   }
+  ]
+ },
+ {
+  "id": "bm-1",
+  "role": "브랜드 마케팅",
+  "text": "[(가상) 한솔푸드 2026 신입사원 공채] 브랜드마케팅 부문\n\n1. 모집부문: 브랜드마케팅 (식품 사업본부)\n2. 담당업무\n - 브랜드 전략 수립 및 포지셔닝\n - 신제품 론칭 캠페인 기획\n - 소비자·경쟁사 시장조사\n - 광고 대행사 관리\n3. 자격요건\n - 시장조사 및 소비자 분석 역량\n - 파워포인트를 활용한 기획서 작성 능력\n - 프레젠테이션 능력\n - 비즈니스 영어 가능자 (TOEIC 800점 이상)\n4. 우대사항\n - 마케팅 공모전 수상 경력\n - 식품 소비 트렌드에 대한 높은 관심\n5. 근무조건: 정규직, 서울 본사, 연 1회 스마트팩토리 견학 프로그램 운영",
+  "labels": [
+   {
+    "skill": "시장조사",
+    "type": "required",
+    "evidence": "시장조사 및 소비자 분석 역량",
+    "id": "market"
+   },
+   {
+    "skill": "소비자 분석",
+    "type": "required",
+    "evidence": "소비자 분석 역량",
+    "id": "market"
+   },
+   {
+    "skill": "파워포인트",
+    "type": "required",
+    "evidence": "파워포인트를 활용한 기획서 작성 능력",
+    "id": "ppt"
+   },
+   {
+    "skill": "프레젠테이션",
+    "type": "required",
+    "evidence": "프레젠테이션 능력",
+    "id": "ppt"
+   },
+   {
+    "skill": "영어",
+    "type": "required",
+    "evidence": "비즈니스 영어 가능자",
+    "id": "english"
+   },
+   {
+    "skill": "브랜드 전략 수립",
+    "type": "duties",
+    "evidence": "브랜드 전략 수립",
+    "id": "brand"
+   },
+   {
+    "skill": "캠페인 기획",
+    "type": "duties",
+    "evidence": "캠페인 기획",
+    "id": "brand"
+   },
+   {
+    "skill": "경쟁사 조사",
+    "type": "duties",
+    "evidence": "경쟁사 시장조사",
+    "id": "market"
+   },
+   {
+    "skill": "대행사 관리",
+    "type": "duties",
+    "evidence": "광고 대행사 관리",
+    "id": null
+   },
+   {
+    "skill": "마케팅 공모전 수상",
+    "type": "preferred",
+    "evidence": "마케팅 공모전 수상 경력",
+    "id": null
+   },
+   {
+    "skill": "식품 소비 트렌드 이해",
+    "type": "preferred",
+    "evidence": "식품 소비 트렌드에 대한 높은 관심",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "acc-1",
+  "role": "회계",
+  "text": "공고명 | (가상) 한국수자원관리공단 2026년 하반기 신입 채용 (일반직 회계)\n\n구분 | 내용\n채용분야 | 회계 (재무처)\n모집인원 | 5명\n담당업무 | 월말·연말 결산 / 재무제표 작성 / 부가가치세 등 세무 신고 지원 / 예산 집행 관리 / 전표 처리\n지원자격 | 재무회계 및 원가회계에 대한 이해 / 엑셀을 이용한 자료 정리 능력 / 꼼꼼한 업무 처리 능력\n우대사항 | 전산회계 1급 이상 / 더존 Smart A 사용 경험 / SAP 사용 경험\n기관소개 | 공단은 스마트 물관리 시스템 개발과 IoT 센서 사업을 추진하고 있습니다.\n전형 | 서류심사 - 필기시험(NCS, 전공) - 면접\n근무지 | 대전 본사",
+  "labels": [
+   {
+    "skill": "재무회계",
+    "type": "required",
+    "evidence": "재무회계 및 원가회계에 대한 이해",
+    "id": "accounting"
+   },
+   {
+    "skill": "원가회계",
+    "type": "required",
+    "evidence": "원가회계",
+    "id": "accounting"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀을 이용한 자료 정리 능력",
+    "id": "excel"
+   },
+   {
+    "skill": "꼼꼼함",
+    "type": "required",
+    "evidence": "꼼꼼한 업무 처리 능력",
+    "id": null
+   },
+   {
+    "skill": "결산",
+    "type": "duties",
+    "evidence": "월말·연말 결산",
+    "id": "accounting"
+   },
+   {
+    "skill": "재무제표 작성",
+    "type": "duties",
+    "evidence": "재무제표 작성",
+    "id": "accounting"
+   },
+   {
+    "skill": "세무 신고",
+    "type": "duties",
+    "evidence": "세무 신고 지원",
+    "id": "accounting"
+   },
+   {
+    "skill": "예산 집행 관리",
+    "type": "duties",
+    "evidence": "예산 집행 관리",
+    "id": null
+   },
+   {
+    "skill": "전표 처리",
+    "type": "duties",
+    "evidence": "전표 처리",
+    "id": "accounting"
+   },
+   {
+    "skill": "전산회계 1급",
+    "type": "preferred",
+    "evidence": "전산회계 1급 이상",
+    "id": "accountingcert"
+   },
+   {
+    "skill": "더존",
+    "type": "preferred",
+    "evidence": "더존 Smart A 사용 경험",
+    "id": null
+   },
+   {
+    "skill": "SAP",
+    "type": "preferred",
+    "evidence": "SAP 사용 경험",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "hr-1",
+  "role": "인사",
+  "text": "(가상) 블루오션 코리아 - HR Generalist 신입 (외국계 제약회사 한국법인)\n\n저희는 글로벌 제약회사 한국법인이며, 사내 데이터 플랫폼은 Python과 SQL로 운영되지만 HR팀은 쓰지 않아요.\n\n하는 일\n- 채용 프로세스 운영 (공고 게시, 서류 검토, 면접 일정 조율)\n- 입퇴사 처리와 급여, 4대보험 업무 지원\n- 신입사원 온보딩 프로그램 운영\n\n이런 분을 찾아요\n- 노동법(근로기준법)의 기초를 이해하는 분\n- 엑셀로 명단과 급여 자료를 다룰 수 있는 분\n- 영어로 이메일을 작성하고 본사 HR과 소통할 수 있는 분\n- 직원 개인정보를 철저히 보호할 수 있는 분\n\n경력 무관, 전공 무관입니다. Workday 같은 인사 시스템은 몰라도 돼요. 입사 후 알려드립니다.\nHR 데이터 분석 경험이 있으면 우대합니다.",
+  "labels": [
+   {
+    "skill": "노동법",
+    "type": "required",
+    "evidence": "노동법(근로기준법)의 기초를 이해",
+    "id": "hr"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀로 명단과 급여 자료를 다룰 수",
+    "id": "excel"
+   },
+   {
+    "skill": "영어 이메일 작성",
+    "type": "required",
+    "evidence": "영어로 이메일을 작성",
+    "id": "english"
+   },
+   {
+    "skill": "개인정보 보호",
+    "type": "required",
+    "evidence": "직원 개인정보를 철저히 보호",
+    "id": null
+   },
+   {
+    "skill": "채용 프로세스 운영",
+    "type": "duties",
+    "evidence": "채용 프로세스 운영",
+    "id": "hr"
+   },
+   {
+    "skill": "면접 일정 조율",
+    "type": "duties",
+    "evidence": "면접 일정 조율",
+    "id": null
+   },
+   {
+    "skill": "입퇴사 처리",
+    "type": "duties",
+    "evidence": "입퇴사 처리",
+    "id": "hr"
+   },
+   {
+    "skill": "급여 업무 지원",
+    "type": "duties",
+    "evidence": "급여",
+    "id": "hr"
+   },
+   {
+    "skill": "4대보험",
+    "type": "duties",
+    "evidence": "4대보험 업무 지원",
+    "id": "hr"
+   },
+   {
+    "skill": "온보딩 운영",
+    "type": "duties",
+    "evidence": "온보딩 프로그램 운영",
+    "id": "hr"
+   },
+   {
+    "skill": "HR 데이터 분석",
+    "type": "preferred",
+    "evidence": "HR 데이터 분석 경험",
+    "id": "datanalysis"
+   }
+  ]
+ },
+ {
+  "id": "sales-1",
+  "role": "영업",
+  "text": "[(가상) 대성산업 B2B 영업 신입사원 모집]\n\n대성산업은 산업용 자재를 공급하는 중견기업으로, 스마트 물류 플랫폼과 클라우드 ERP 구축 사업도 확대하고 있습니다.\n\n■ 담당업무\n- 신규 거래처 발굴 및 방문 영업\n- 견적서 작성 및 계약 조건 협상\n- 기존 고객 관리 및 CRM 데이터 입력\n\n■ 자격요건\n- 고객 응대 시 커뮤니케이션 능력이 필수이며, 중국어 가능자는 우대합니다.\n- 운전면허(2종 보통 이상) 소지자 (외근이 잦습니다)\n- 전공 무관, 경력 무관\n\n■ 우대사항\n- 영업 현장 인턴 경험이 있거나 Salesforce를 사용해 본 분\n\n■ 근무조건\n정규직, 경기 안산 본사, 영업 성과급 별도 지급",
+  "labels": [
+   {
+    "skill": "커뮤니케이션 능력",
+    "type": "required",
+    "evidence": "커뮤니케이션 능력이 필수",
+    "id": "communication"
+   },
+   {
+    "skill": "운전면허",
+    "type": "required",
+    "evidence": "운전면허(2종 보통 이상)",
+    "id": null
+   },
+   {
+    "skill": "신규 거래처 발굴",
+    "type": "duties",
+    "evidence": "신규 거래처 발굴",
+    "id": "sales"
+   },
+   {
+    "skill": "방문 영업",
+    "type": "duties",
+    "evidence": "방문 영업",
+    "id": "sales"
+   },
+   {
+    "skill": "견적서 작성",
+    "type": "duties",
+    "evidence": "견적서 작성",
+    "id": null
+   },
+   {
+    "skill": "계약 협상",
+    "type": "duties",
+    "evidence": "계약 조건 협상",
+    "id": null
+   },
+   {
+    "skill": "고객 관리",
+    "type": "duties",
+    "evidence": "기존 고객 관리",
+    "id": "crm"
+   },
+   {
+    "skill": "CRM",
+    "type": "duties",
+    "evidence": "CRM 데이터 입력",
+    "id": "crm"
+   },
+   {
+    "skill": "중국어",
+    "type": "preferred",
+    "evidence": "중국어 가능자는 우대",
+    "id": "chinese"
+   },
+   {
+    "skill": "영업 인턴 경험",
+    "type": "preferred",
+    "evidence": "영업 현장 인턴 경험",
+    "id": "sales"
+   },
+   {
+    "skill": "Salesforce",
+    "type": "preferred",
+    "evidence": "Salesforce를 사용해 본 분",
+    "id": "crm"
+   }
+  ]
+ },
+ {
+  "id": "plan-1",
+  "role": "경영기획",
+  "text": "[(가상) 세진홀딩스 2026 하반기 신입 공채] 경영기획\n\n세진홀딩스는 AI 반도체 장비와 소재 사업을 영위하는 그룹 지주사입니다.\n\n- 모집부문: 경영기획팀 (본사, 서울 중구)\n- 담당업무: 연간 사업계획 수립, 계열사 예산 편성 및 조정, 월간 경영실적 분석, 경영진 보고자료 작성\n- 필수: 재무제표를 읽고 이해할 수 있는 분, 엑셀과 파워포인트를 능숙하게 다루는 분, 숫자와 문제를 구조화하는 논리적 사고력을 갖춘 분\n- 우대: 엑셀 VBA 자동화 경험이 있거나 Power BI로 대시보드를 만들어 본 분, 컨설팅 관련 인턴 경험자\n- 제출: 이력서, 자기소개서, 졸업(예정)증명서\n- 전형: 서류 - 인적성 - 실무면접 - 임원면접",
+  "labels": [
+   {
+    "skill": "재무제표 이해",
+    "type": "required",
+    "evidence": "재무제표를 읽고 이해",
+    "id": "finance"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀과 파워포인트를 능숙하게",
+    "id": "excel"
+   },
+   {
+    "skill": "파워포인트",
+    "type": "required",
+    "evidence": "파워포인트",
+    "id": "ppt"
+   },
+   {
+    "skill": "논리적 사고력",
+    "type": "required",
+    "evidence": "논리적 사고력",
+    "id": null
+   },
+   {
+    "skill": "사업계획 수립",
+    "type": "duties",
+    "evidence": "연간 사업계획 수립",
+    "id": "strategy"
+   },
+   {
+    "skill": "예산 편성",
+    "type": "duties",
+    "evidence": "예산 편성 및 조정",
+    "id": null
+   },
+   {
+    "skill": "경영실적 분석",
+    "type": "duties",
+    "evidence": "월간 경영실적 분석",
+    "id": null
+   },
+   {
+    "skill": "보고자료 작성",
+    "type": "duties",
+    "evidence": "경영진 보고자료 작성",
+    "id": "writing"
+   },
+   {
+    "skill": "VBA",
+    "type": "preferred",
+    "evidence": "엑셀 VBA 자동화 경험",
+    "id": "excel"
+   },
+   {
+    "skill": "Power BI",
+    "type": "preferred",
+    "evidence": "Power BI로 대시보드를 만들어 본 분",
+    "id": "powerbi"
+   },
+   {
+    "skill": "컨설팅 인턴 경험",
+    "type": "preferred",
+    "evidence": "컨설팅 관련 인턴 경험자",
+    "id": null
+   }
+  ]
+ }
+]

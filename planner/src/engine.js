@@ -190,18 +190,18 @@ export function safeUrl(value) {
 
 // ---------- 공고 분석 ----------
 const HEADERS = [
-  ["required", /^(자격\s*요건(\s*(및|과|와|\/|&)\s*우대(\s*사항)?)?|지원\s*자격|응시\s*자격|지원\s*요건|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?|must\s+haves?|who\s+we.?re\s+looking\s+for|what\s+we.?re\s+looking\s+for)$/i],
+  ["required", /^(자격\s*요건(\s*(및|과|와|\/|&)\s*우대(\s*사항)?)?|필수\s*자격|지원\s*자격|응시\s*자격|지원\s*요건|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?|must\s+haves?|(who|what)\s+we(.?re|\s+are)\s+looking\s+for)$/i],
   ["preferred", /^(우대(\s*(사항|조건|요건|역량))?|이런\s*분이면\s*더.*|이런\s*(경험|분)이\s*있(다면|으면).*|있으면\s*좋(아요|은\s*(점|경험)).*|preferred(\s+(qualifications?|skills))?|nice\s+to\s+haves?|bonus(\s+points?)?|plus)$/i],
-  ["duties", /^(담당\s*업무|주요\s*(업무|역할)|수행\s*업무|업무\s*내용|직무\s*내용|(하|하시|하게\s*될|맡게\s*될)\s*(는\s*)?(일|업무)|이런\s*(일|업무)을.*|(포지션|직무)\s*소개|responsibilities|what\s+you.?ll\s+do)$/i],
+  ["duties", /^(담당\s*업무|주요\s*(업무|역할)|수행\s*업무|업무\s*내용|직무\s*내용|(하|하시|하게\s*될|맡게\s*될)\s*(는\s*)?(일|업무)|이런\s*(일|업무)을.*|(포지션|직무)\s*소개|responsibilities|what\s+you(.?ll|\s+will)\s+do)$/i],
   ["ignore", /^((모집\s*)?직무|포지션|직군|복리\s*후생|복지|혜택(\s*및\s*복지)?|함께하면\s*좋은\s*점|perks|benefits|근무(\s*(조건|환경|지|장소|시간|형태))?|전형(\s*(절차|과정|방법))?|채용\s*(절차|과정|전형|분야|부문|직무)|모집\s*(부문|분야|직무|인원)|지원\s*(방법|절차)|진행\s*(순서|절차)|절차|process|(회사|기업|팀|서비스)\s*소개|about\s+us|접수\s*(기간|방법)|제출\s*서류|기타\s*(사항|안내)?|유의\s*사항|고용\s*형태|location)$/i],
 ];
 const BULLETS = "\\-–—*•·▪■□●○◦◆◇★☆▣▲△▶▷►※#>";
 const TITLE_LINE = /(모집|채용|공고|인턴|신입|\|)/;
-const PREFERRED_CUE = /(더\s*좋|우대|도움이\s*(됩|돼)|플러스|가산점|환영|있으면\s*좋)/;
+const PREFERRED_CUE = /(더\s*좋|우대|도움이\s*(됩|돼)|플러스|가산점|환영|(있으면|있다면|했다면|하다면)\s*좋)/;
 const REQUIRED_CUE = /(필수|반드시|중요하게|(있는|가능한|익숙한|없는|갖춘|능숙한)\s*분|(있어야|가능해야|갖춰야|알아야)\s*(하|합|해)|필요합니다)/;
 // 회사 소개나 사내 제도를 설명하는 문장은 지원자 요건이 아니다.
-const COMPANY_LINE = /(사내|당사|저희|우리\s*(회사|팀)|(스타트업|기업|회사)입니다|운영\s*(중|합니다)|도입해)/;
-const MAJOR_LINE = /(학과|전공).{0,20}(졸업|학사|석사|재학)/;
+const COMPANY_LINE = /(사내|당사|저희|자체|우리\s*(회사|팀)|(스타트업|기업|회사)입니다|운영\s*(중|합니다)|도입해|(쓰고|확대하고|하고)\s*있(어요|습니다)|\b(our|we)\s+(app|team|stack|backend|engineers|company|use|are|build)\b)/i;
+const MAJOR_LINE = /((학과|전공).{0,20}(졸업|학사|석사|재학))|관련\s*(학과|전공|석사|학사|박사)|(석사|박사|학사)\s*(과정|학위)/;
 const NEGATION = /(필요\s*(는\s*)?(없|하지\s*않)|없어도\s*(괜찮|됩|돼)|몰라도\s*(괜찮|됩|돼)|무관|보지\s*않)/;
 const BACK_REFERENCE = /필요\s*(는\s*)?(없|하지\s*않)/;
 const CLAUSE = /[,，]|(?<=지만|니다만|는데|으나|며)/;
@@ -321,15 +321,17 @@ export function analyzePosting(source) {
       section = whole;
       continue;
     }
+    // "회사소개: ...", "하는 일: ..."처럼 내용이 같은 줄에 있는 머리글은 그 줄에만 적용한다.
     const { type: inlineType, line } = splitHeader(rawLine);
-    if (inlineType) section = inlineType;
-    if (!line || section === "ignore") continue;
+    const lineSection = inlineType ?? section;
+    if (!line || lineSection === "ignore") continue;
     // 머리글 앞 첫 줄의 공고 제목과 회사명은 요건이 아니다.
     if (!seenText) {
       seenText = true;
       if (!section && line.length < 80 && TITLE_LINE.test(line)) continue;
     }
-    if (section) record(line, section);
+    if (COMPANY_LINE.test(line) && !cueType(line)) continue;
+    if (lineSection) record(line, lineSection);
     else if (!COMPANY_LINE.test(line) || cueType(line)) record(line, cueType(line) ?? "duties", true);
   }
   return { hits: [...best.values()], unread: unread.slice(0, 20) };
