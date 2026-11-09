@@ -96,6 +96,7 @@ function saveHtml() {
   persist();
   const copy = document.documentElement.cloneNode(true);
   copy.querySelector("#app").replaceChildren();
+  copy.querySelector("#toast").textContent = "";
   copy.querySelector("#duck-data").textContent = embedJson(state);
   copy.querySelector("title").textContent = `${state.profile.name ? `${state.profile.name}의 ` : ""}진로 플래너`;
   download(`duck-planner-${today()}.html`, `<!doctype html>\n${copy.outerHTML}`, "text/html;charset=utf-8");
@@ -403,7 +404,7 @@ function notices() {
   if (state.isSample) {
     return h(
       "div",
-      { class: "notice" },
+      { class: "notice", role: "region", "aria-label": "안내" },
       h("span", {}, "예시 데이터를 보고 있어요. 고친 내용은 저장되지 않아요."),
       button("내 정보로 시작하기", () => {
         state = null;
@@ -423,7 +424,7 @@ function notices() {
   if (Date.now() - state.lastExportAt > BACKUP_REMINDER_MS) {
     return h(
       "div",
-      { class: "notice" },
+      { class: "notice", role: "region", "aria-label": "안내" },
       h("span", {}, "방문 기록을 지우면 자동 저장도 사라져요. 내 HTML을 저장해 두면 안전해요."),
     );
   }
@@ -513,13 +514,7 @@ function openTask(task) {
             "날짜",
             h(
               "select",
-              {
-                name: "date",
-                onchange: (event) => {
-                  dialog.close();
-                  mutate((draft) => moveTask(draft, task.id, event.target.value), `${shortDate(event.target.value)}로 옮겼어요.`);
-                },
-              },
+              { name: "date" },
               !dates.includes(task.date) ? h("option", { value: task.date, selected: true }, `${shortDate(task.date)} (지난 날)`) : null,
               dates.map((date) =>
                 h("option", { value: date, selected: date === task.date }, `${shortDate(date)} ${weekdayName(date)}요일`),
@@ -531,6 +526,11 @@ function openTask(task) {
             "div",
             { class: "actions" },
             h("button", { type: "submit", class: "button primary" }, "완료하기"),
+            button("이 날짜로 옮기기", (event) => {
+              const date = event.currentTarget.form.elements.date.value;
+              dialog.close();
+              mutate((draft) => moveTask(draft, task.id, date), `${shortDate(date)}로 옮겼어요.`);
+            }, "button quiet"),
             task.custom
               ? button("삭제", () => {
                   dialog.close();
@@ -764,7 +764,7 @@ function sectionWeek(week) {
       week.days.map((day) =>
         h(
           "div",
-          { class: `day${day.date === now ? " is-today" : ""}${day.date < now ? " is-past" : ""}` },
+          { class: `day${day.date === now ? " is-today" : ""}${day.date < now ? " is-past" : ""}`, "aria-current": day.date === now ? "date" : undefined },
           h(
             "div",
             { class: "day-head" },
@@ -1331,25 +1331,38 @@ function viewSettings() {
 // ---------- 렌더 ----------
 const VIEWS = { dashboard: viewDashboard, postings: viewPostings, experiences: viewExperiences, schedule: viewSchedule, settings: viewSettings };
 
+const VIEW_TITLE = { dashboard: "대시보드", postings: "공고", experiences: "경험 은행", schedule: "일정", settings: "설정" };
+const APP_TITLE = "DUCK LIBRARY 진로 플래너";
+
+// 다시 그린 뒤에도 포커스를 잃지 않게 한다. 같은 키의 요소가 없으면 화면 제목으로 보낸다.
+function restoreFocus(focusKey, hadFocus) {
+  const target = focusKey && root.querySelector(`[data-key="${CSS.escape(focusKey)}"]`);
+  if (target) return target.focus();
+  if (!hadFocus) return;
+  const heading = root.querySelector("main h1");
+  heading?.setAttribute("tabindex", "-1");
+  heading?.focus();
+}
+
 function render() {
-  const focusKey = document.activeElement?.dataset?.key;
+  const active = document.activeElement;
+  const focusKey = active?.dataset?.key;
+  const hadFocus = Boolean(active && active !== document.body && root.contains(active));
   cachedDiagnosis = null;
-  const live = h("div", { id: "toast", class: "toast", role: "status", "aria-live": "polite" });
-  const message = document.getElementById("toast")?.textContent ?? "";
-  live.textContent = message;
   if (!state) {
-    document.title = "DUCK LIBRARY 진로 플래너";
+    document.title = APP_TITLE;
     root.replaceChildren(
       h("div", { class: "shell" }, loadProblem ? h("div", { class: "notice alert", role: "alert" }, loadProblem) : null),
       viewIntro(),
-      live,
     );
+    restoreFocus(focusKey, hadFocus);
     return;
   }
   const now = today();
   ensureWeek(state, now, deriveTasks(state, diagnosis()));
-  root.replaceChildren(h("div", { class: "shell" }, topbar(), notices(), VIEWS[view]()), live);
-  if (focusKey) root.querySelector(`[data-key="${CSS.escape(focusKey)}"]`)?.focus();
+  document.title = `${VIEW_TITLE[view]} · ${APP_TITLE}`;
+  root.replaceChildren(h("div", { class: "shell" }, topbar(), notices(), VIEWS[view]()));
+  restoreFocus(focusKey, hadFocus);
 }
 
 state = loadInitialState();

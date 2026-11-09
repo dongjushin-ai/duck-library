@@ -190,11 +190,15 @@ export function safeUrl(value) {
 
 // ---------- 공고 분석 ----------
 const HEADERS = [
-  ["required", /^(자격\s*요건|지원\s*자격|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?)$/i],
+  ["required", /^(자격\s*요건|지원\s*자격|응시\s*자격|지원\s*요건|who\s+we.?re\s+looking\s+for|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?)$/i],
   ["preferred", /^(우대\s*(사항|조건|요건|역량)?|이런\s*분이면\s*더.*|preferred(\s+qualifications?)?|nice\s+to\s+have)$/i],
   ["duties", /^(담당\s*업무|주요\s*(업무|역할)|수행\s*업무|업무\s*내용|직무\s*내용|하는\s*일|이런\s*(일|업무)을.*|(포지션|직무)\s*소개|responsibilities|what\s+you.?ll\s+do)$/i],
-  ["ignore", /^(복리\s*후생|복지|혜택(\s*및\s*복지)?|근무\s*(조건|환경|지|시간|형태)|전형\s*(절차|과정)|채용\s*(절차|과정|전형)|(회사|기업|팀|서비스)\s*소개|접수\s*(기간|방법)|제출\s*서류|기타\s*(사항|안내)?|유의\s*사항|benefits|about\s+us)$/i],
+  ["ignore", /^(복리\s*후생|복지|혜택(\s*및\s*복지)?|근무(\s*(조건|환경|지|시간|형태))?|전형(\s*(절차|과정|방법))?|채용\s*(절차|과정|전형)|지원\s*(방법|절차)|절차|process|(회사|기업|팀|서비스)\s*소개|접수\s*(기간|방법)|제출\s*서류|기타\s*(사항|안내)?|유의\s*사항|benefits|about\s+us)$/i],
 ];
+const TITLE_LINE = /(모집|채용|공고|인턴|신입|\|)/;
+const PREFERRED_CUE = /(더\s*좋|우대|도움이\s*(됩|돼)|플러스|가산점)/;
+const REQUIRED_CUE = /(필수|반드시|중요하게|(있는|가능한|익숙한|없는|갖춘)\s*분)/;
+const NEGATION = /(필요\s*(없|하지\s*않)|없어도\s*(괜찮|됩|돼)|몰라도\s*(괜찮|됩|돼)|무관)/;
 const ADMIN_LINE = /(학력|전공\s*무관|경력\s*(무관|\d)|신입|병역|해외\s*여행|성별|연령|나이|졸업|마감|채용\s*시)/;
 const matchers = SKILLS.map((skill) => [skill.id, skillMatcher(skill)]);
 
@@ -210,10 +214,27 @@ function headerType(line) {
   return HEADERS.find(([, pattern]) => pattern.test(plain))?.[0] ?? null;
 }
 
+const skillsIn = (text) => matchers.filter(([, matches]) => matches(text)).map(([skillId]) => skillId);
+
+// "A는 없어도 괜찮지만 B"처럼 부정된 절의 역량은 세지 않는다.
+// 부정된 절에 역량이 없으면 "X를 쓰지만 지식은 필요 없다"처럼 바로 앞 절을 가리킨다고 본다.
+function findSkills(line) {
+  if (!NEGATION.test(line)) return skillsIn(line);
+  const clauses = line.split(/[,，]|(?<=지만|니다만|는데|으나)/).map(skillsIn);
+  const excluded = new Set();
+  line.split(/[,，]|(?<=지만|니다만|는데|으나)/).forEach((clause, index) => {
+    if (!NEGATION.test(clause)) return;
+    excluded.add(index);
+    if (!clauses[index].length && index > 0) excluded.add(index - 1);
+  });
+  return [...new Set(clauses.flatMap((skills, index) => (excluded.has(index) ? [] : skills)))];
+}
+
 export function analyzePosting(source) {
   const best = new Map();
   const unread = [];
   let section = null;
+  let seenText = false;
   const lines = source
     .replace(/\r\n?/g, "\n")
     .split(/\n|(?<=[.!?])\s+|\s*[•▪■●◦]\s*/);
@@ -232,12 +253,17 @@ export function analyzePosting(source) {
       line = cleanLine(inline[2]);
     }
     if (section === "ignore") continue;
+    // 머리글 앞 첫 줄의 공고 제목과 회사명은 요건이 아니다.
+    if (!seenText) {
+      seenText = true;
+      if (!section && line.length < 80 && TITLE_LINE.test(line)) continue;
+    }
 
-    let type = section ?? "duties";
+    let type = section ?? (PREFERRED_CUE.test(line) ? "preferred" : REQUIRED_CUE.test(line) ? "required" : "duties");
     if (/우대/.test(line)) type = "preferred";
     else if (/필수/.test(line)) type = "required";
 
-    const found = matchers.filter(([, matches]) => matches(line)).map(([skillId]) => skillId);
+    const found = findSkills(line);
     for (const skillId of found) {
       const current = best.get(skillId);
       if (!current || WEIGHT[type] > WEIGHT[current.type]) {

@@ -8,7 +8,8 @@
     "setup": "node src/setup.js",
     "dry-run": "node src/setup.js --dry-run",
     "test": "node --test test/*.test.js",
-    "planner:build": "node planner/build.js"
+    "planner:build": "node planner/build.js",
+    "planner:bench": "node planner/bench.js"
   },
   "engines": { "node": ">=18.17" },
   "keywords": ["notion", "second-brain", "template", "student", "korean", "세컨드브레인", "노션", "career-planner", "portfolio"],
