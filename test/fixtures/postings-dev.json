@@ -38,13 +38,13 @@
     "skill": "Looker",
     "type": "preferred",
     "evidence": "Tableau 또는 Looker 등 BI 툴 사용 경험자",
-    "id": null
+    "id": "bi"
    },
    {
     "skill": "대시보드 구축",
     "type": "duties",
     "evidence": "서비스 이용 로그 기반 지표 대시보드 구축 및 운영",
-    "id": null
+    "id": "bi"
    },
    {
     "skill": "A/B 테스트",
@@ -111,19 +111,19 @@
     "skill": "자료구조",
     "type": "required",
     "evidence": "컴퓨터공학 기초(자료구조, 네트워크, 운영체제)",
-    "id": null
+    "id": "csbasics"
    },
    {
     "skill": "네트워크",
     "type": "required",
     "evidence": "컴퓨터공학 기초(자료구조, 네트워크, 운영체제)",
-    "id": null
+    "id": "csbasics"
    },
    {
     "skill": "운영체제",
     "type": "required",
     "evidence": "컴퓨터공학 기초(자료구조, 네트워크, 운영체제)",
-    "id": null
+    "id": "csbasics"
    },
    {
     "skill": "AWS",
@@ -147,7 +147,7 @@
     "skill": "알고리즘",
     "type": "preferred",
     "evidence": "알고리즘 문제 풀이 경험이 있는 분",
-    "id": null
+    "id": "csbasics"
    },
    {
     "skill": "REST API 설계",
@@ -190,13 +190,13 @@
     "skill": "HTML",
     "type": "required",
     "evidence": "Solid understanding of JavaScript (ES6+), HTML, CSS",
-    "id": null
+    "id": "htmlcss"
    },
    {
     "skill": "CSS",
     "type": "required",
     "evidence": "Solid understanding of JavaScript (ES6+), HTML, CSS",
-    "id": null
+    "id": "htmlcss"
    },
    {
     "skill": "React",
@@ -274,7 +274,7 @@
     "skill": "반응형 웹 UI 개발",
     "type": "duties",
     "evidence": "Build responsive web UI with React and TypeScript",
-    "id": null
+    "id": "htmlcss"
    }
   ]
  },
@@ -305,7 +305,7 @@
     "skill": "선형대수",
     "type": "required",
     "evidence": "선형대수·확률통계 등 수학 기초",
-    "id": null
+    "id": "math"
    },
    {
     "skill": "확률통계",
@@ -529,7 +529,7 @@
     "skill": "성과 리포트 작성",
     "type": "duties",
     "evidence": "매주 광고 성과를 리포트로 정리해 팀에 공유",
-    "id": null
+    "id": "writing"
    }
   ]
  },
@@ -669,7 +669,7 @@
     "skill": "HTML/CSS",
     "type": "preferred",
     "evidence": "HTML/CSS 이해도가 있는 분",
-    "id": null
+    "id": "htmlcss"
    },
    {
     "skill": "핀테크 도메인 이해",

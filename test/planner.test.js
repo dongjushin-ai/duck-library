@@ -266,3 +266,44 @@ test("증거 링크는 http(s)만 링크로 만든다", () => {
   assert.equal(safeUrl("보고서.pdf"), null);
   assert.equal(safeUrl("https://example.com/a"), "https://example.com/a");
 });
+
+test("표로 옮긴 공고는 칸마다 구분을 따른다", () => {
+  const result = analyzePosting(`모집부문 | 담당업무 | 자격요건 | 우대사항
+데이터 엔지니어 | 배치 파이프라인 운영 | SQL 활용 가능자, 전공 무관 | Airflow 경험자 우대`);
+  assert.equal(typeOf(result, "sql"), "required");
+  assert.equal(typeOf(result, "pipeline"), "duties");
+});
+
+test("괄호 머리글과 문장 머리글을 알아본다", () => {
+  const result = analyzePosting(`[필수 역량]
+- Swift 앱 개발 경험
+[함께하면 좋은 점] 사내 Python 스터디
+◆ 지원자격
+- Kotlin 경험
+복리후생으로 SQL 교육을 제공합니다.
+지원자격은 엑셀을 다루는 분입니다.`);
+  assert.equal(typeOf(result, "ios"), "required");
+  assert.equal(typeOf(result, "kotlin"), "required");
+  assert.equal(typeOf(result, "excel"), "required");
+  assert.equal(typeOf(result, "python"), undefined);
+  assert.equal(typeOf(result, "sql"), undefined);
+});
+
+test("부정 표현은 그 역량만 빼고, '필요 없음'만 앞 절을 가리킨다", () => {
+  const hit = (text, id) => typeOf(analyzePosting(`자격요건\n${text}`), id);
+  assert.equal(hit("SQL 활용 가능자, Python 스크립트 작성 가능자, 전공 무관", "python"), "required");
+  assert.equal(hit("광고 운영 경험이 없어도 괜찮지만, 엑셀에 능숙한 분", "performance"), undefined);
+  assert.equal(hit("광고 운영 경험이 없어도 괜찮지만, 엑셀에 능숙한 분", "excel"), "required");
+  assert.equal(hit("Java로 만든 툴을 쓰지만 사용 지식은 필요 없습니다", "java"), undefined);
+});
+
+test("공고 정답 세트에서 정확도가 기준 아래로 떨어지지 않는다", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { benchmark } = await import("../planner/bench.js");
+  for (const name of ["postings-dev.json", "postings-holdout.json"]) {
+    const result = benchmark(JSON.parse(readFileSync(new URL(`fixtures/${name}`, import.meta.url), "utf8")));
+    assert.ok(result.precision >= 0.9, `${name} 정밀도 ${result.precision}`);
+    assert.ok(result.recall >= 0.9, `${name} 재현율 ${result.recall}`);
+    assert.ok(result.typeAccuracy >= 0.9, `${name} 구분 정확도 ${result.typeAccuracy}`);
+  }
+});

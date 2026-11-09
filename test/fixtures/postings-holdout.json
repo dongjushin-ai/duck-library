@@ -1,0 +1,860 @@
+[
+ {
+  "id": "de-1",
+  "role": "데이터 엔지니어",
+  "text": "[(가상) 데이터브릿지] 2027 상반기 데이터 엔지니어 신입 채용\n\n모집부문 | 담당업무 | 자격요건 | 우대사항\n데이터 엔지니어(신입) | 일 배치 파이프라인 구축 및 운영, 데이터 웨어하우스 모델링 | SQL 활용 가능자, Python 으로 스크립트 작성 가능하신 분, 전공 무관 | Airflow 사용 경험자, AWS 경험자 우대, Spark 이해자 우대\n\n복리후생\n- 사내 Kafka 스터디 지원, 최신 노트북 지급, 점심 제공\n- 자기계발비 월 10만원\n\n채용절차\n서류전형 → 코딩테스트(Python) → 1차 면접 → 2차 면접 → 최종합격\n\n회사소개\n(가상) 데이터브릿지는 Hadoop 기반 데이터 플랫폼을 운영하는 스타트업입니다.\n근무지: 서울 성수 (Docker 기반 개발환경 제공)",
+  "labels": [
+   {
+    "skill": "SQL",
+    "type": "required",
+    "evidence": "SQL 활용 가능자",
+    "id": "sql"
+   },
+   {
+    "skill": "Python",
+    "type": "required",
+    "evidence": "Python 으로 스크립트 작성 가능하신 분",
+    "id": "python"
+   },
+   {
+    "skill": "Airflow",
+    "type": "preferred",
+    "evidence": "Airflow 사용 경험자",
+    "id": "pipeline"
+   },
+   {
+    "skill": "AWS",
+    "type": "preferred",
+    "evidence": "AWS 경험자 우대",
+    "id": "cloud"
+   },
+   {
+    "skill": "Spark",
+    "type": "preferred",
+    "evidence": "Spark 이해자 우대",
+    "id": "pipeline"
+   },
+   {
+    "skill": "데이터 웨어하우스",
+    "type": "duties",
+    "evidence": "데이터 웨어하우스 모델링",
+    "id": null
+   },
+   {
+    "skill": "배치 파이프라인",
+    "type": "duties",
+    "evidence": "일 배치 파이프라인 구축 및 운영",
+    "id": "pipeline"
+   }
+  ]
+ },
+ {
+  "id": "an-1",
+  "role": "안드로이드 개발",
+  "text": "(가상) 모비텍 안드로이드 개발자 (신입/인턴)\n\n◆ 담당업무\n- 자사 쇼핑 앱 신규 화면 개발 및 유지보수\n- 앱 크래시 분석 및 성능 개선\n\n◆ 지원자격\n- Kotlin 으로 앱 개발 경험이 있는 분\n- Android SDK 및 Jetpack 기본 이해\n- REST API 연동 경험\n- 경력 무관, 전공 무관\n\n◆ 우대사항\n- Jetpack Compose 사용 경험자\n- Git 협업 경험\n- 플레이스토어 앱 출시 경험자\n\n◆ 복리후생\n식대 지원, 유연근무, 사내 Swift 스터디 및 Flutter 세미나 운영, Firebase 교육비 지원\n\n◆ 전형절차\n서류 → 과제(Kotlin) → 면접\n\n◆ 근무지\n서울 구로 디지털단지 / iOS 팀과 같은 층에서 근무",
+  "labels": [
+   {
+    "skill": "Kotlin",
+    "type": "required",
+    "evidence": "Kotlin 으로 앱 개발 경험이 있는 분",
+    "id": "kotlin"
+   },
+   {
+    "skill": "Android SDK",
+    "type": "required",
+    "evidence": "Android SDK 및 Jetpack 기본 이해",
+    "id": "android"
+   },
+   {
+    "skill": "Jetpack",
+    "type": "required",
+    "evidence": "Android SDK 및 Jetpack 기본 이해",
+    "id": "android"
+   },
+   {
+    "skill": "REST API",
+    "type": "required",
+    "evidence": "REST API 연동 경험",
+    "id": "api"
+   },
+   {
+    "skill": "Jetpack Compose",
+    "type": "preferred",
+    "evidence": "Jetpack Compose 사용 경험자",
+    "id": "android"
+   },
+   {
+    "skill": "Git",
+    "type": "preferred",
+    "evidence": "Git 협업 경험",
+    "id": "git"
+   },
+   {
+    "skill": "앱 출시",
+    "type": "preferred",
+    "evidence": "플레이스토어 앱 출시 경험자",
+    "id": null
+   },
+   {
+    "skill": "크래시 분석",
+    "type": "duties",
+    "evidence": "앱 크래시 분석 및 성능 개선",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "ios-1",
+  "role": "iOS 개발",
+  "text": "(가상) 오로라랩스 iOS 개발자 인턴\n\n[하는 일]\niOS 앱 신규 기능 개발, 디자인 시스템 적용, 앱스토어 심사 대응\n\n[필수 역량]\n- Swift 로 iOS 앱을 만들어 본 경험\n- UIKit 또는 SwiftUI 중 하나 이상 활용 가능\n- 객체지향 프로그래밍 이해\n\n[이런 경험이 있다면 좋아요]\n- SwiftUI 프로젝트 경험\n- Combine 또는 async/await 비동기 처리 경험\n- CI/CD 구성 경험(Fastlane 등)\n- Objective-C 는 몰라도 됩니다\n\n[함께하면 좋은 점]\n맥북 프로 지급, Kotlin/Android 팀과 정기 기술 교류, Jenkins 기반 자동 배포 환경\n[진행 순서] 서류 - 사전과제 - 면접",
+  "labels": [
+   {
+    "skill": "Swift",
+    "type": "required",
+    "evidence": "Swift 로 iOS 앱을 만들어 본 경험",
+    "id": "ios"
+   },
+   {
+    "skill": "UIKit",
+    "type": "required",
+    "evidence": "UIKit 또는 SwiftUI 중 하나 이상",
+    "id": "ios"
+   },
+   {
+    "skill": "SwiftUI",
+    "type": "required",
+    "evidence": "UIKit 또는 SwiftUI 중 하나 이상",
+    "id": "ios"
+   },
+   {
+    "skill": "객체지향 프로그래밍",
+    "type": "required",
+    "evidence": "객체지향 프로그래밍 이해",
+    "id": "csbasics"
+   },
+   {
+    "skill": "Combine",
+    "type": "preferred",
+    "evidence": "Combine 또는 async/await",
+    "id": "ios"
+   },
+   {
+    "skill": "async/await",
+    "type": "preferred",
+    "evidence": "Combine 또는 async/await",
+    "id": "ios"
+   },
+   {
+    "skill": "CI/CD",
+    "type": "preferred",
+    "evidence": "CI/CD 구성 경험(Fastlane 등)",
+    "id": "cicd"
+   },
+   {
+    "skill": "Fastlane",
+    "type": "preferred",
+    "evidence": "Fastlane 등",
+    "id": "cicd"
+   },
+   {
+    "skill": "앱스토어 심사",
+    "type": "duties",
+    "evidence": "앱스토어 심사 대응",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "do-1",
+  "role": "DevOps",
+  "text": "(가상) 클라우드웍스 DevOps 엔지니어 신입 채용\n\n[모집부문] DevOps 엔지니어\n[담당업무] 쿠버네티스 클러스터 운영, 배포 자동화, 모니터링 체계 구축\n[지원자격]\n · 리눅스 서버 사용에 익숙하신 분\n · Docker 컨테이너를 직접 다뤄 본 분\n · Git 사용 가능자\n · 컴퓨터공학 전공자 우대는 아니며 전공 무관\n[우대사항]\n · AWS 자격증 또는 실무 경험자\n · Terraform 등 IaC 경험\n · Prometheus, Grafana 모니터링 경험\n · Python 또는 Bash 스크립팅\n\n[복리후생] 클라우드 크레딧 지원, Java 교육 프로그램, 재택 주 1회\n[채용절차] 서류 → 기술면접 → 임원면접\n[회사소개] (가상) 클라우드웍스는 Spring 기반 SaaS 를 운영합니다. 경력 무관.",
+  "labels": [
+   {
+    "skill": "리눅스",
+    "type": "required",
+    "evidence": "리눅스 서버 사용에 익숙하신 분",
+    "id": "linux"
+   },
+   {
+    "skill": "Docker",
+    "type": "required",
+    "evidence": "Docker 컨테이너를 직접 다뤄 본 분",
+    "id": "docker"
+   },
+   {
+    "skill": "Git",
+    "type": "required",
+    "evidence": "Git 사용 가능자",
+    "id": "git"
+   },
+   {
+    "skill": "AWS",
+    "type": "preferred",
+    "evidence": "AWS 자격증 또는 실무 경험자",
+    "id": "cloud"
+   },
+   {
+    "skill": "Terraform",
+    "type": "preferred",
+    "evidence": "Terraform 등 IaC 경험",
+    "id": "iac"
+   },
+   {
+    "skill": "IaC",
+    "type": "preferred",
+    "evidence": "Terraform 등 IaC 경험",
+    "id": "iac"
+   },
+   {
+    "skill": "Prometheus",
+    "type": "preferred",
+    "evidence": "Prometheus, Grafana 모니터링 경험",
+    "id": "monitoring"
+   },
+   {
+    "skill": "Grafana",
+    "type": "preferred",
+    "evidence": "Prometheus, Grafana 모니터링 경험",
+    "id": "monitoring"
+   },
+   {
+    "skill": "Python",
+    "type": "preferred",
+    "evidence": "Python 또는 Bash 스크립팅",
+    "id": "python"
+   },
+   {
+    "skill": "Bash",
+    "type": "preferred",
+    "evidence": "Python 또는 Bash 스크립팅",
+    "id": "linux"
+   },
+   {
+    "skill": "쿠버네티스",
+    "type": "duties",
+    "evidence": "쿠버네티스 클러스터 운영",
+    "id": "docker"
+   },
+   {
+    "skill": "배포 자동화",
+    "type": "duties",
+    "evidence": "배포 자동화",
+    "id": "cicd"
+   }
+  ]
+ },
+ {
+  "id": "ml-1",
+  "role": "머신러닝 엔지니어",
+  "text": "(가상) 뉴로시티 Machine Learning Engineer (Entry-level)\n\nResponsibilities\n- Train and evaluate recommendation and NLP models\n- Build data preprocessing pipelines and deploy models to production\n\nQualifications\n- Proficiency in Python\n- Hands-on experience with PyTorch or TensorFlow\n- Solid understanding of statistics and linear algebra\n- Fluent in Korean; no prior work experience required\n\nBonus points\n- Experience with Hugging Face Transformers\n- Kaggle competition or published paper\n- Familiarity with Docker and MLflow\n\nBenefits\nFree GPU cloud credits, flexible hours, weekly Java and Go brown-bag seminars. Our office in Gangnam uses Kubernetes internally.\n\nProcess\nResume screening, coding test, technical interview, culture fit interview.",
+  "labels": [
+   {
+    "skill": "Python",
+    "type": "required",
+    "evidence": "Proficiency in Python",
+    "id": "python"
+   },
+   {
+    "skill": "PyTorch",
+    "type": "required",
+    "evidence": "PyTorch or TensorFlow",
+    "id": "ml"
+   },
+   {
+    "skill": "TensorFlow",
+    "type": "required",
+    "evidence": "PyTorch or TensorFlow",
+    "id": "ml"
+   },
+   {
+    "skill": "통계",
+    "type": "required",
+    "evidence": "understanding of statistics",
+    "id": "stats"
+   },
+   {
+    "skill": "선형대수",
+    "type": "required",
+    "evidence": "linear algebra",
+    "id": "math"
+   },
+   {
+    "skill": "Hugging Face Transformers",
+    "type": "preferred",
+    "evidence": "Hugging Face Transformers",
+    "id": "nlp"
+   },
+   {
+    "skill": "Kaggle",
+    "type": "preferred",
+    "evidence": "Kaggle competition or published paper",
+    "id": null
+   },
+   {
+    "skill": "Docker",
+    "type": "preferred",
+    "evidence": "Familiarity with Docker and MLflow",
+    "id": "docker"
+   },
+   {
+    "skill": "MLflow",
+    "type": "preferred",
+    "evidence": "Docker and MLflow",
+    "id": "mlops"
+   },
+   {
+    "skill": "추천 모델",
+    "type": "duties",
+    "evidence": "recommendation and NLP models",
+    "id": null
+   },
+   {
+    "skill": "NLP",
+    "type": "duties",
+    "evidence": "recommendation and NLP models",
+    "id": "nlp"
+   },
+   {
+    "skill": "데이터 전처리",
+    "type": "duties",
+    "evidence": "data preprocessing pipelines",
+    "id": null
+   },
+   {
+    "skill": "모델 배포",
+    "type": "duties",
+    "evidence": "deploy models to production",
+    "id": "mlops"
+   }
+  ]
+ },
+ {
+  "id": "gm-1",
+  "role": "그로스 마케팅",
+  "text": "(가상) 플레이그라운드 그로스 마케터 인턴 모집\n\n모집부문 | 담당업무 | 자격요건 | 우대사항\n그로스 마케터 | 퍼포먼스 광고 운영, 전환율 개선 실험, 주간 성과 리포트 작성 | 엑셀(피벗, VLOOKUP) 활용 가능자, 메타·구글 광고 집행 경험자, 숫자에 강하신 분 | GA4 또는 Amplitude 분석 경험, SQL 가능자 우대, 카피라이팅 경험자\n\n복리후생: 광고비 집행 실무 교육, 도서 구입비, Figma 및 Photoshop 라이선스 제공(사용 능력 불필요)\n채용절차: 서류 → 실무 과제 → 대면 면접\n근무지: 서울 마포구, 주 5일",
+  "labels": [
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀(피벗, VLOOKUP) 활용 가능자",
+    "id": "excel"
+   },
+   {
+    "skill": "메타 광고",
+    "type": "required",
+    "evidence": "메타·구글 광고 집행 경험자",
+    "id": "performance"
+   },
+   {
+    "skill": "구글 광고",
+    "type": "required",
+    "evidence": "메타·구글 광고 집행 경험자",
+    "id": "performance"
+   },
+   {
+    "skill": "GA4",
+    "type": "preferred",
+    "evidence": "GA4 또는 Amplitude",
+    "id": "ga"
+   },
+   {
+    "skill": "Amplitude",
+    "type": "preferred",
+    "evidence": "GA4 또는 Amplitude",
+    "id": "ga"
+   },
+   {
+    "skill": "SQL",
+    "type": "preferred",
+    "evidence": "SQL 가능자 우대",
+    "id": "sql"
+   },
+   {
+    "skill": "카피라이팅",
+    "type": "preferred",
+    "evidence": "카피라이팅 경험자",
+    "id": "content"
+   },
+   {
+    "skill": "퍼포먼스 광고",
+    "type": "duties",
+    "evidence": "퍼포먼스 광고 운영",
+    "id": "performance"
+   },
+   {
+    "skill": "A/B 테스트",
+    "type": "duties",
+    "evidence": "전환율 개선 실험",
+    "id": "abtest"
+   },
+   {
+    "skill": "성과 리포트",
+    "type": "duties",
+    "evidence": "주간 성과 리포트 작성",
+    "id": "writing"
+   }
+  ]
+ },
+ {
+  "id": "bm-1",
+  "role": "브랜드 마케팅",
+  "text": "(가상) 모아리빙 브랜드 마케팅 신입 사원\n\n우리는 라이프스타일 브랜드를 키워 갈 신입 사원을 찾습니다. 입사 후에는 브랜드 캠페인 기획과 SNS 콘텐츠 운영, 인플루언서 협업을 맡게 됩니다. 인스타그램과 유튜브 채널을 직접 운영해 본 경험이 있으시면 좋고, 트렌드를 빠르게 읽고 기획서를 논리적으로 쓸 수 있는 분을 기다립니다. 파워포인트로 제안서를 작성할 수 있어야 하며 영어 이력서 가능, 어학 점수는 보지 않습니다. 포토샵이나 프리미어 편집 가능자는 우대합니다. 코딩이나 데이터 분석은 몰라도 됩니다. 복리후생으로 사내 카페와 SQL 교육 없음, 연차 자유 사용을 제공하며 전형은 서류, 면접 2회입니다. 경력 무관, 전공 무관.",
+  "labels": [
+   {
+    "skill": "캠페인 기획",
+    "type": "duties",
+    "evidence": "브랜드 캠페인 기획",
+    "id": "brand"
+   },
+   {
+    "skill": "SNS 콘텐츠 운영",
+    "type": "duties",
+    "evidence": "SNS 콘텐츠 운영",
+    "id": "sns"
+   },
+   {
+    "skill": "인플루언서 협업",
+    "type": "duties",
+    "evidence": "인플루언서 협업",
+    "id": null
+   },
+   {
+    "skill": "기획서 작성",
+    "type": "required",
+    "evidence": "기획서를 논리적으로 쓸 수 있는 분",
+    "id": "writing"
+   },
+   {
+    "skill": "파워포인트",
+    "type": "required",
+    "evidence": "파워포인트로 제안서를 작성",
+    "id": "ppt"
+   },
+   {
+    "skill": "트렌드 분석",
+    "type": "required",
+    "evidence": "트렌드를 빠르게 읽고",
+    "id": null
+   },
+   {
+    "skill": "인스타그램",
+    "type": "preferred",
+    "evidence": "인스타그램과 유튜브 채널을 직접 운영해 본 경험",
+    "id": "sns"
+   },
+   {
+    "skill": "유튜브",
+    "type": "preferred",
+    "evidence": "인스타그램과 유튜브 채널을 직접 운영해 본 경험",
+    "id": "sns"
+   },
+   {
+    "skill": "포토샵",
+    "type": "preferred",
+    "evidence": "포토샵이나 프리미어 편집 가능자는 우대",
+    "id": "graphic"
+   },
+   {
+    "skill": "프리미어",
+    "type": "preferred",
+    "evidence": "포토샵이나 프리미어 편집 가능자는 우대",
+    "id": "video"
+   }
+  ]
+ },
+ {
+  "id": "gd-1",
+  "role": "그래픽 디자인",
+  "text": "(가상) 스튜디오 온도 그래픽 디자이너 (인턴)\n\n◆ 하는 일\n브랜드 패키지, 포스터, 웹 배너 등 그래픽 시안 제작 및 인쇄 파일 작업\n\n◆ 지원자격\n- Adobe Illustrator, Photoshop 능숙하게 다루는 분\n- 타이포그래피와 레이아웃에 대한 감각\n- 포트폴리오 제출 필수\n- 학력·전공 무관\n\n◆ 우대\n- InDesign 활용 가능자\n- 모션그래픽(After Effects) 경험자\n- Figma 로 UI 시안 작업 경험\n- 인쇄 공정 이해\n\n◆ 근무환경\nHTML/CSS 를 알 필요는 없으며, 개발팀이 Zeplin 으로 시안을 받아 구현합니다. 점심 제공, 자율 출퇴근.\n◆ 전형: 포트폴리오 검토 → 면접",
+  "labels": [
+   {
+    "skill": "Illustrator",
+    "type": "required",
+    "evidence": "Adobe Illustrator, Photoshop 능숙",
+    "id": "graphic"
+   },
+   {
+    "skill": "Photoshop",
+    "type": "required",
+    "evidence": "Adobe Illustrator, Photoshop 능숙",
+    "id": "graphic"
+   },
+   {
+    "skill": "타이포그래피",
+    "type": "required",
+    "evidence": "타이포그래피와 레이아웃에 대한 감각",
+    "id": null
+   },
+   {
+    "skill": "레이아웃",
+    "type": "required",
+    "evidence": "타이포그래피와 레이아웃",
+    "id": null
+   },
+   {
+    "skill": "포트폴리오",
+    "type": "required",
+    "evidence": "포트폴리오 제출 필수",
+    "id": null
+   },
+   {
+    "skill": "InDesign",
+    "type": "preferred",
+    "evidence": "InDesign 활용 가능자",
+    "id": "graphic"
+   },
+   {
+    "skill": "After Effects",
+    "type": "preferred",
+    "evidence": "모션그래픽(After Effects) 경험자",
+    "id": "video"
+   },
+   {
+    "skill": "Figma",
+    "type": "preferred",
+    "evidence": "Figma 로 UI 시안 작업 경험",
+    "id": "figma"
+   },
+   {
+    "skill": "인쇄 공정",
+    "type": "preferred",
+    "evidence": "인쇄 공정 이해",
+    "id": null
+   },
+   {
+    "skill": "패키지 디자인",
+    "type": "duties",
+    "evidence": "브랜드 패키지",
+    "id": null
+   }
+  ]
+ },
+ {
+  "id": "st-1",
+  "role": "전략기획",
+  "text": "(가상) 한울인더스트리 전략기획팀 신입 채용\n\n[담당업무]\n중장기 사업계획 수립, 신사업 시장조사, 경영진 보고자료 작성, 투자 타당성 검토\n\n[필수 역량]\n- 엑셀로 재무 모델링 및 데이터 정리가 가능한 분\n- 파워포인트로 논리적인 보고서를 작성할 수 있는 분\n- 시장·경쟁사 분석 경험자\n- 영어 문서 독해 가능자\n\n[우대]\n- 컨설팅 또는 공모전 경험\n- 재무제표 분석 능력, 관련 자격증(CFA, 재무분석사)\n- SQL 또는 Tableau 활용 경험\n\n[복리후생] 사내 AI 교육(Python 기초), 석식 제공, 자녀학자금\n[채용절차] 서류 → 인적성 → 실무 면접 → 임원 면접\n[근무지] 서울 여의도 본사",
+  "labels": [
+   {
+    "skill": "사업계획 수립",
+    "type": "duties",
+    "evidence": "중장기 사업계획 수립",
+    "id": "strategy"
+   },
+   {
+    "skill": "시장조사",
+    "type": "duties",
+    "evidence": "신사업 시장조사",
+    "id": "market"
+   },
+   {
+    "skill": "보고자료 작성",
+    "type": "duties",
+    "evidence": "경영진 보고자료 작성",
+    "id": "writing"
+   },
+   {
+    "skill": "투자 타당성 검토",
+    "type": "duties",
+    "evidence": "투자 타당성 검토",
+    "id": "finance"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀로 재무 모델링",
+    "id": "excel"
+   },
+   {
+    "skill": "재무 모델링",
+    "type": "required",
+    "evidence": "재무 모델링 및 데이터 정리",
+    "id": "finance"
+   },
+   {
+    "skill": "파워포인트",
+    "type": "required",
+    "evidence": "파워포인트로 논리적인 보고서",
+    "id": "ppt"
+   },
+   {
+    "skill": "경쟁사 분석",
+    "type": "required",
+    "evidence": "시장·경쟁사 분석 경험자",
+    "id": "market"
+   },
+   {
+    "skill": "영어",
+    "type": "required",
+    "evidence": "영어 문서 독해 가능자",
+    "id": "english"
+   },
+   {
+    "skill": "컨설팅 경험",
+    "type": "preferred",
+    "evidence": "컨설팅 또는 공모전 경험",
+    "id": null
+   },
+   {
+    "skill": "재무제표 분석",
+    "type": "preferred",
+    "evidence": "재무제표 분석 능력",
+    "id": "finance"
+   },
+   {
+    "skill": "CFA",
+    "type": "preferred",
+    "evidence": "관련 자격증(CFA, 재무분석사)",
+    "id": null
+   },
+   {
+    "skill": "SQL",
+    "type": "preferred",
+    "evidence": "SQL 또는 Tableau",
+    "id": "sql"
+   },
+   {
+    "skill": "Tableau",
+    "type": "preferred",
+    "evidence": "SQL 또는 Tableau",
+    "id": "tableau"
+   }
+  ]
+ },
+ {
+  "id": "so-1",
+  "role": "해외영업",
+  "text": "(가상) 글로벌트레이드 해외영업 신입/인턴\n\n모집부문 | 담당업무 | 자격요건 | 우대사항\n해외영업(동남아) | 바이어 발굴 및 견적·계약 협상, 수출입 서류 관리, 해외 출장 | 영어 비즈니스 회화 및 이메일 작성 가능자, 해외 출장 결격사유 없으신 분, 엑셀·워드 사용 가능 | 베트남어 또는 인도네시아어 가능자 우대, 무역영어 1급·국제무역사 자격증, 무역 실무(인코텀즈, L/C) 이해, 해외 거주 경험자\n\n복리후생: 어학 수당, 해외 출장비 전액 지원, ERP 시스템 교육(경험 불필요), 연 1회 해외 워크숍\n채용절차: 서류 → 영어 인터뷰 → 임원 면접\n근무지: 부산 해운대 / 전공 무관, 경력 무관, 운전면허 불필요",
+  "labels": [
+   {
+    "skill": "영어 회화",
+    "type": "required",
+    "evidence": "영어 비즈니스 회화",
+    "id": "english"
+   },
+   {
+    "skill": "영어 이메일 작성",
+    "type": "required",
+    "evidence": "이메일 작성 가능자",
+    "id": "english"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀·워드 사용 가능",
+    "id": "excel"
+   },
+   {
+    "skill": "워드",
+    "type": "required",
+    "evidence": "엑셀·워드 사용 가능",
+    "id": null
+   },
+   {
+    "skill": "베트남어",
+    "type": "preferred",
+    "evidence": "베트남어 또는 인도네시아어",
+    "id": null
+   },
+   {
+    "skill": "인도네시아어",
+    "type": "preferred",
+    "evidence": "베트남어 또는 인도네시아어",
+    "id": null
+   },
+   {
+    "skill": "무역영어",
+    "type": "preferred",
+    "evidence": "무역영어 1급",
+    "id": "english"
+   },
+   {
+    "skill": "국제무역사",
+    "type": "preferred",
+    "evidence": "국제무역사 자격증",
+    "id": "trade"
+   },
+   {
+    "skill": "인코텀즈",
+    "type": "preferred",
+    "evidence": "무역 실무(인코텀즈, L/C) 이해",
+    "id": "trade"
+   },
+   {
+    "skill": "L/C",
+    "type": "preferred",
+    "evidence": "인코텀즈, L/C",
+    "id": "trade"
+   },
+   {
+    "skill": "바이어 발굴",
+    "type": "duties",
+    "evidence": "바이어 발굴",
+    "id": null
+   },
+   {
+    "skill": "계약 협상",
+    "type": "duties",
+    "evidence": "견적·계약 협상",
+    "id": null
+   },
+   {
+    "skill": "수출입 서류 관리",
+    "type": "duties",
+    "evidence": "수출입 서류 관리",
+    "id": "trade"
+   }
+  ]
+ },
+ {
+  "id": "ga-1",
+  "role": "경영지원(총무·회계)",
+  "text": "(가상) 대한솔루션 경영지원팀(총무·회계) 신입 모집\n\n총무와 회계 업무를 함께 배우며 성장할 신입 사원을 모십니다. 주요 업무는 전표 입력과 부가세 신고 보조, 비용 정산, 자산 관리, 사무용품 및 계약 관리, 4대보험 취득·상실 처리입니다. 지원자격은 경영·회계 기초 지식을 갖추고 엑셀 함수(SUMIF, VLOOKUP)를 능숙하게 다루는 분이며 꼼꼼하고 보안 의식이 높은 분을 찾습니다. 더존 같은 회계 프로그램 사용 경험자, 전산회계 1급 또는 FAT 1급 자격증 소지자를 우대합니다. 개발 지식은 필요 없고 경력 무관입니다. 복리후생은 사내 개발자 간식바(Python 스터디 운영), 명절 선물이며, 전형은 서류, 실무면접, 최종면접 순입니다. 근무지는 서울 강서구 마곡입니다.",
+  "labels": [
+   {
+    "skill": "전표 입력",
+    "type": "duties",
+    "evidence": "전표 입력",
+    "id": "accounting"
+   },
+   {
+    "skill": "부가세 신고",
+    "type": "duties",
+    "evidence": "부가세 신고 보조",
+    "id": "accounting"
+   },
+   {
+    "skill": "비용 정산",
+    "type": "duties",
+    "evidence": "비용 정산",
+    "id": "accounting"
+   },
+   {
+    "skill": "4대보험 처리",
+    "type": "duties",
+    "evidence": "4대보험 취득·상실 처리",
+    "id": "hr"
+   },
+   {
+    "skill": "계약 관리",
+    "type": "duties",
+    "evidence": "사무용품 및 계약 관리",
+    "id": null
+   },
+   {
+    "skill": "회계 기초 지식",
+    "type": "required",
+    "evidence": "경영·회계 기초 지식",
+    "id": "accounting"
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀 함수(SUMIF, VLOOKUP)를 능숙하게",
+    "id": "excel"
+   },
+   {
+    "skill": "더존",
+    "type": "preferred",
+    "evidence": "더존 같은 회계 프로그램 사용 경험자",
+    "id": null
+   },
+   {
+    "skill": "전산회계 1급",
+    "type": "preferred",
+    "evidence": "전산회계 1급 또는 FAT 1급",
+    "id": "accountingcert"
+   },
+   {
+    "skill": "FAT 1급",
+    "type": "preferred",
+    "evidence": "전산회계 1급 또는 FAT 1급",
+    "id": "accountingcert"
+   }
+  ]
+ },
+ {
+  "id": "md-1",
+  "role": "MD(상품기획)",
+  "text": "(가상) 리브마켓 MD(상품기획) 인턴 채용\n\n[모집부문] 패션/라이프 MD 인턴\n[담당업무]\n- 신규 상품 소싱 및 협력사 커뮤니케이션\n- 판매 데이터 분석을 통한 상품 구성 제안, 가격 및 마진 관리\n- 시즌 프로모션 기획\n[필수 역량]\n- 엑셀 데이터 정리 및 간단한 분석이 가능하신 분\n- 협력사와 원활하게 소통할 수 있는 분\n- 트렌드에 관심이 많은 분\n[우대 사항]\n- 이커머스 운영 또는 스마트스토어 경험자\n- 쿠팡·네이버 쇼핑 셀러 경험\n- SQL 이나 BI 도구(Looker Studio) 활용 가능자\n- 중국어 가능자\n\n[혜택] 임직원 상품 할인, 개발팀 협업 Jira 교육, 자유복장\n[전형] 서류 → 과제(상품 기획안) → 면접\n[근무지] 서울 송파구, 전공 무관, 경력 무관",
+  "labels": [
+   {
+    "skill": "상품 소싱",
+    "type": "duties",
+    "evidence": "신규 상품 소싱",
+    "id": null
+   },
+   {
+    "skill": "협력사 커뮤니케이션",
+    "type": "required",
+    "evidence": "협력사와 원활하게 소통",
+    "id": "communication"
+   },
+   {
+    "skill": "판매 데이터 분석",
+    "type": "duties",
+    "evidence": "판매 데이터 분석을 통한 상품 구성 제안",
+    "id": "datanalysis"
+   },
+   {
+    "skill": "가격·마진 관리",
+    "type": "duties",
+    "evidence": "가격 및 마진 관리",
+    "id": null
+   },
+   {
+    "skill": "프로모션 기획",
+    "type": "duties",
+    "evidence": "시즌 프로모션 기획",
+    "id": null
+   },
+   {
+    "skill": "엑셀",
+    "type": "required",
+    "evidence": "엑셀 데이터 정리 및 간단한 분석",
+    "id": "excel"
+   },
+   {
+    "skill": "트렌드 파악",
+    "type": "required",
+    "evidence": "트렌드에 관심이 많은 분",
+    "id": null
+   },
+   {
+    "skill": "스마트스토어",
+    "type": "preferred",
+    "evidence": "이커머스 운영 또는 스마트스토어 경험자",
+    "id": "ecommerce"
+   },
+   {
+    "skill": "이커머스 운영",
+    "type": "preferred",
+    "evidence": "이커머스 운영",
+    "id": "ecommerce"
+   },
+   {
+    "skill": "셀러 경험",
+    "type": "preferred",
+    "evidence": "쿠팡·네이버 쇼핑 셀러 경험",
+    "id": null
+   },
+   {
+    "skill": "SQL",
+    "type": "preferred",
+    "evidence": "SQL 이나 BI 도구",
+    "id": "sql"
+   },
+   {
+    "skill": "Looker Studio",
+    "type": "preferred",
+    "evidence": "BI 도구(Looker Studio)",
+    "id": "bi"
+   },
+   {
+    "skill": "중국어",
+    "type": "preferred",
+    "evidence": "중국어 가능자",
+    "id": "chinese"
+   }
+  ]
+ }
+]
