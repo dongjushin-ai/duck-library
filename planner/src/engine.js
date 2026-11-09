@@ -190,15 +190,18 @@ export function safeUrl(value) {
 
 // ---------- 공고 분석 ----------
 const HEADERS = [
-  ["required", /^(자격\s*요건|지원\s*자격|응시\s*자격|지원\s*요건|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?|must\s+haves?|who\s+we.?re\s+looking\s+for|what\s+we.?re\s+looking\s+for)$/i],
+  ["required", /^(자격\s*요건(\s*(및|과|와|\/|&)\s*우대(\s*사항)?)?|지원\s*자격|응시\s*자격|지원\s*요건|필수(\s*(요건|사항|조건|역량))?|요구\s*(사항|역량|조건)|이런\s*분을\s*(찾|모).*|requirements?|qualifications?|must\s+haves?|who\s+we.?re\s+looking\s+for|what\s+we.?re\s+looking\s+for)$/i],
   ["preferred", /^(우대(\s*(사항|조건|요건|역량))?|이런\s*분이면\s*더.*|이런\s*(경험|분)이\s*있(다면|으면).*|있으면\s*좋(아요|은\s*(점|경험)).*|preferred(\s+(qualifications?|skills))?|nice\s+to\s+haves?|bonus(\s+points?)?|plus)$/i],
-  ["duties", /^(담당\s*업무|주요\s*(업무|역할)|수행\s*업무|업무\s*내용|직무\s*내용|하는\s*일|이런\s*(일|업무)을.*|(포지션|직무)\s*소개|responsibilities|what\s+you.?ll\s+do)$/i],
-  ["ignore", /^(복리\s*후생|복지|혜택(\s*및\s*복지)?|함께하면\s*좋은\s*점|perks|benefits|근무(\s*(조건|환경|지|장소|시간|형태))?|전형(\s*(절차|과정|방법))?|채용\s*(절차|과정|전형|분야|부문|직무)|모집\s*(부문|분야|직무|인원)|지원\s*(방법|절차)|진행\s*(순서|절차)|절차|process|(회사|기업|팀|서비스)\s*소개|about\s+us|접수\s*(기간|방법)|제출\s*서류|기타\s*(사항|안내)?|유의\s*사항|고용\s*형태|location)$/i],
+  ["duties", /^(담당\s*업무|주요\s*(업무|역할)|수행\s*업무|업무\s*내용|직무\s*내용|(하|하시|하게\s*될|맡게\s*될)\s*(는\s*)?(일|업무)|이런\s*(일|업무)을.*|(포지션|직무)\s*소개|responsibilities|what\s+you.?ll\s+do)$/i],
+  ["ignore", /^((모집\s*)?직무|포지션|직군|복리\s*후생|복지|혜택(\s*및\s*복지)?|함께하면\s*좋은\s*점|perks|benefits|근무(\s*(조건|환경|지|장소|시간|형태))?|전형(\s*(절차|과정|방법))?|채용\s*(절차|과정|전형|분야|부문|직무)|모집\s*(부문|분야|직무|인원)|지원\s*(방법|절차)|진행\s*(순서|절차)|절차|process|(회사|기업|팀|서비스)\s*소개|about\s+us|접수\s*(기간|방법)|제출\s*서류|기타\s*(사항|안내)?|유의\s*사항|고용\s*형태|location)$/i],
 ];
 const BULLETS = "\\-–—*•·▪■□●○◦◆◇★☆▣▲△▶▷►※#>";
 const TITLE_LINE = /(모집|채용|공고|인턴|신입|\|)/;
-const PREFERRED_CUE = /(더\s*좋|우대|도움이\s*(됩|돼)|플러스|가산점)/;
-const REQUIRED_CUE = /(필수|반드시|중요하게|(있는|가능한|익숙한|없는|갖춘)\s*분)/;
+const PREFERRED_CUE = /(더\s*좋|우대|도움이\s*(됩|돼)|플러스|가산점|환영|있으면\s*좋)/;
+const REQUIRED_CUE = /(필수|반드시|중요하게|(있는|가능한|익숙한|없는|갖춘|능숙한)\s*분|(있어야|가능해야|갖춰야|알아야)\s*(하|합|해)|필요합니다)/;
+// 회사 소개나 사내 제도를 설명하는 문장은 지원자 요건이 아니다.
+const COMPANY_LINE = /(사내|당사|저희|우리\s*(회사|팀)|(스타트업|기업|회사)입니다|운영\s*(중|합니다)|도입해)/;
+const MAJOR_LINE = /(학과|전공).{0,20}(졸업|학사|석사|재학)/;
 const NEGATION = /(필요\s*(는\s*)?(없|하지\s*않)|없어도\s*(괜찮|됩|돼)|몰라도\s*(괜찮|됩|돼)|무관|보지\s*않)/;
 const BACK_REFERENCE = /필요\s*(는\s*)?(없|하지\s*않)/;
 const CLAUSE = /[,，]|(?<=지만|니다만|는데|으나|며)/;
@@ -208,7 +211,7 @@ const matchers = SKILLS.map((skill) => [skill.id, skillMatcher(skill)]);
 const cleanLine = (line) =>
   line
     .replace(/^\s*\d+[.)]\s+/, "")
-    .replace(new RegExp(`^[\\s${BULLETS}\\[\\]【】<]+`), "")
+    .replace(new RegExp(`^[\\s${BULLETS}\\[\\]【】<\\p{Extended_Pictographic}\\u{FE0F}\\u{200D}]+`, "u"), "")
     .replace(/[\s\]】>]+$/, "")
     .trim();
 
@@ -251,6 +254,8 @@ function splitHeader(rawLine) {
   return { type: null, line };
 }
 
+const cueType = (text) => (PREFERRED_CUE.test(text) ? "preferred" : REQUIRED_CUE.test(text) ? "required" : null);
+
 export function analyzePosting(source) {
   const best = new Map();
   const unread = [];
@@ -258,14 +263,24 @@ export function analyzePosting(source) {
   let seenText = false;
   let columns = null;
 
-  const record = (line, type) => {
+  const record = (line, type, prose = false) => {
+    // 머리글 없는 문단은 절마다 "있어야 해요", "있으면 좋아요" 같은 표현으로 구분한다.
+    if (prose) {
+      if (COMPANY_LINE.test(line) && !REQUIRED_CUE.test(line) && !PREFERRED_CUE.test(line)) return;
+      const parts = line.split(CLAUSE).map((part) => part.trim()).filter(Boolean);
+      if (parts.length > 1 && !NEGATION.test(line)) {
+        parts.forEach((part) => record(part, cueType(part) ?? type));
+        return;
+      }
+    }
+    if (MAJOR_LINE.test(line)) return;
     // "A 경험자, B 우대"처럼 한 줄에 필수와 우대가 섞이면 항목마다 따로 본다.
-    if (/[,，]/.test(line) && /(우대|필수)/.test(line) && !NEGATION.test(line)) {
+    if (/[,，]/.test(line) && (PREFERRED_CUE.test(line) || /필수/.test(line)) && !NEGATION.test(line)) {
       line.split(/[,，]/).forEach((item) => item.trim() && record(item.trim(), type));
       return;
     }
     let itemType = type;
-    if (/우대/.test(line)) itemType = "preferred";
+    if (PREFERRED_CUE.test(line)) itemType = "preferred";
     else if (/필수/.test(line)) itemType = "required";
     const found = findSkills(line);
     for (const skillId of found) {
@@ -283,6 +298,11 @@ export function analyzePosting(source) {
   for (const rawLine of lines) {
     // 표를 글로 옮긴 공고: "모집부문 | 담당업무 | 자격요건 | 우대사항" 다음 줄부터 칸마다 구분을 따른다.
     const cells = rawLine.split("|").map(cleanLine);
+    if (cells.length === 2 && headerType(cells[0])) {
+      const type = headerType(cells[0]);
+      if (type !== "ignore" && cells[1]) record(cells[1], type);
+      continue;
+    }
     if (cells.length >= 3) {
       const types = cells.map(headerType);
       if (types.filter(Boolean).length >= cells.length - 1) {
@@ -309,7 +329,8 @@ export function analyzePosting(source) {
       seenText = true;
       if (!section && line.length < 80 && TITLE_LINE.test(line)) continue;
     }
-    record(line, section ?? (PREFERRED_CUE.test(line) ? "preferred" : REQUIRED_CUE.test(line) ? "required" : "duties"));
+    if (section) record(line, section);
+    else if (!COMPANY_LINE.test(line) || cueType(line)) record(line, cueType(line) ?? "duties", true);
   }
   return { hits: [...best.values()], unread: unread.slice(0, 20) };
 }

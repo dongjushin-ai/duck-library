@@ -300,7 +300,7 @@ test("부정 표현은 그 역량만 빼고, '필요 없음'만 앞 절을 가�
 test("공고 정답 세트에서 정확도가 기준 아래로 떨어지지 않는다", async () => {
   const { readFileSync } = await import("node:fs");
   const { benchmark } = await import("../planner/bench.js");
-  for (const name of ["postings-dev.json", "postings-holdout.json"]) {
+  for (const name of ["postings-dev.json", "postings-holdout.json", "postings-test.json"]) {
     const result = benchmark(JSON.parse(readFileSync(new URL(`fixtures/${name}`, import.meta.url), "utf8")));
     assert.ok(result.precision >= 0.9, `${name} 정밀도 ${result.precision}`);
     assert.ok(result.recall >= 0.9, `${name} 재현율 ${result.recall}`);
