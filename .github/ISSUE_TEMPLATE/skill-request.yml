@@ -1,0 +1,24 @@
+name: 역량 추가 요청
+description: 공고에서 못 읽은 요건이나 빠진 직무 역량을 알려 주세요.
+title: "[역량] "
+labels: [enhancement, good first issue]
+body:
+  - type: input
+    id: role
+    attributes:
+      label: 목표 직무
+      placeholder: 예) 간호사, 회계사, 게임 기획자
+    validations:
+      required: true
+  - type: textarea
+    id: unread
+    attributes:
+      label: 플래너가 못 읽은 요건
+      description: '"사전에 없어 못 읽은 요건"에 나온 문장을 그대로 붙여넣어 주세요. 회사 이름은 빼도 돼요.'
+    validations:
+      required: true
+  - type: input
+    id: label
+    attributes:
+      label: 어떤 역량으로 보면 좋을까요
+      placeholder: 예) 임상 실습, 세무 신고

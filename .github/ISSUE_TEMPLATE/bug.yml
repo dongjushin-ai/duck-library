@@ -1,0 +1,24 @@
+name: 문제 신고
+description: 화면이 깨지거나 계획이 이상하게 나오면 알려 주세요.
+title: "[문제] "
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 무엇이 이상했나요
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 어떻게 하면 다시 나오나요
+      placeholder: 1. 공고 화면에서 ... 2. ...
+  - type: input
+    id: browser
+    attributes:
+      label: 기기와 브라우저
+      placeholder: 예) 갤럭시 S24, 삼성 인터넷
+  - type: markdown
+    attributes:
+      value: 공고 본문이나 경험 같은 개인 정보는 올리지 마세요. 이슈는 누구나 볼 수 있어요.

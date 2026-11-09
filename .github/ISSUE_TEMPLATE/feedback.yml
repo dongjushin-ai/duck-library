@@ -1,0 +1,28 @@
+name: 사용 후기
+description: 2주 동안 써 본 소감을 알려 주세요. 다음 기능을 정하는 데 써요.
+title: "[후기] "
+labels: [question]
+body:
+  - type: input
+    id: days
+    attributes:
+      label: 최근 14일 중 사용한 날
+      description: 설정 화면 맨 아래 "최근 14일 중 N일 사용했어요"의 숫자예요.
+      placeholder: "예) 6"
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: 주로 쓴 기기
+      options: [휴대폰, 노트북·PC, 둘 다]
+    validations:
+      required: true
+  - type: textarea
+    id: good
+    attributes:
+      label: 계속 쓰게 만든 점
+  - type: textarea
+    id: bad
+    attributes:
+      label: 그만 쓰게 만든 점이나 불편한 점
